@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\admin-dam2b\Desktop\SchoolerzZ\WPF\SchoolerzZ\SchoolerzZ\obj\Debug\net5.0-windows\
+C:\Users\admin-dam2b\Desktop\WPF-SchoolerzZ\WPF_SchoolerzZ\SchoolerzZ\SchoolerzZ\obj\Debug\net5.0-windows\
 SchoolerzZ
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-C:\Users\admin-dam2b\Desktop\SchoolerzZ\WPF\SchoolerzZ\SchoolerzZ\App.xaml
+C:\Users\admin-dam2b\Desktop\WPF-SchoolerzZ\WPF_SchoolerzZ\SchoolerzZ\SchoolerzZ\App.xaml
 3830501887
 8-147196971
-6541418364
+81609197775
 196-1605856171
 MainWindow.xaml;Pages\AddStudent.xaml;Pages\Login.xaml;
 
-False
+True
 

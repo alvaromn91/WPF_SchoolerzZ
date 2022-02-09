@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
 
 namespace SchoolerzZ
 {
@@ -21,6 +22,7 @@ namespace SchoolerzZ
         private string _medical;
         private string _observations;
         private string _photoRoute;
+        private string _password;
         public Student() 
         { 
 
@@ -38,18 +40,13 @@ namespace SchoolerzZ
             PostalCode = postalCode;
             Address = address;
             Email = email;
+            Password = GeneratePassword();
             Medical = medical;
             Observations = observations;
             PhotoRoute = photoRoute;
-
-
             
         }
-        private string CreatePassword() {
-            string pass;
-            pass = "";
-            return pass;
-        }
+
         public string Name { get => _name; set => _name = value; }
         public string Surname1 { get => _surname1; set => _surname1 = value; }
         public string Surname2 { get => _surname2; set => _surname2 = value; }
@@ -63,7 +60,31 @@ namespace SchoolerzZ
         public string Medical { get => _medical; set => _medical = value; }
         public string Observations { get => _observations; set => _observations = value; }
         public string PhotoRoute { get => _photoRoute; set => _photoRoute = value; }
+        public string Password { get => _password; set => _password = value; }
+
+        public string GeneratePassword()
+        {
+            string pass;
+            //Llamar al procedimiento GeneratePassword();
+            pass = "";
+            pass = GetMD5(pass);
+
+            return pass;
+            
+        }
+
+        public static string GetMD5(string str)
+        {
+            MD5 md5 = MD5CryptoServiceProvider.Create();
+            ASCIIEncoding encoding = new();
+            byte[] stream = null;
+            StringBuilder sb = new();
+            stream = md5.ComputeHash(encoding.GetBytes(str));
+            for (int i = 0; i < stream.Length; i++) sb.AppendFormat("{0:x2}", stream[i]);
+            return sb.ToString();
+        }
     }
-   
     
+
+
 }

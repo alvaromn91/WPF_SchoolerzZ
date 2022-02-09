@@ -42,7 +42,7 @@ namespace SchoolerzZ.Pages
             Nullable<bool> result = openFileDlg.ShowDialog();
             openFileDlg.DefaultExt = ".txt";
             openFileDlg.Filter = "Text documents (.txt)|*.txt";
-            openFileDlg.InitialDirectory = @"C:\Temp\";
+            openFileDlg.InitialDirectory = @"C:\Users\admin-dam2b\Pictures";
             openFileDlg.Multiselect = true;
             openFileDlg.Filter = "All files (*.*)|*.*";
 

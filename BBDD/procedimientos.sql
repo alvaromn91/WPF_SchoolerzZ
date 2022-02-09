@@ -310,3 +310,21 @@ BEGIN
 	END IF;
 END
 // DELIMITER ;
+
+
+
+drop procedure GeneratePassword;
+
+DELIMITER //
+CREATE PROCEDURE GeneratePassword(out pv_word varchar(8))
+Begin
+    Declare vi_cont int;
+    set pv_word = '';
+    set vi_cont = 0;
+    while vi_cont < 8 Do
+		set pv_word = concat(pv_word,(substr('abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJLMNOPQRSTUVWXYZ%$&#-@/+',floor(rand()*66),1)));
+        set vi_cont = vi_cont +1;
+	End While;
+end
+
+// DELIMITER ;
