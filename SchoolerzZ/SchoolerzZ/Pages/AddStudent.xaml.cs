@@ -46,6 +46,7 @@ namespace SchoolerzZ.Pages
             openFileDlg.Multiselect = false;
             Nullable<bool> result = openFileDlg.ShowDialog();
 
+
             string archi = openFileDlg.FileName;
             BitmapImage bi = new BitmapImage();
             try
