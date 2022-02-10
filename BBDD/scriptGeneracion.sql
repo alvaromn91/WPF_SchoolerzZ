@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS SchoolerzZ_prueba;
+DROP DATABASE IF EXISTS schoolerzz;
 
-CREATE DATABASE IF NOT EXISTS SchoolerzZ_prueba;
+CREATE DATABASE IF NOT EXISTS SchoolerzZ;
 
-USE SchoolerzZ_prueba;
+USE SchoolerzZ;
 
 DROP TABLE IF EXISTS
 SZ_015_Licences,

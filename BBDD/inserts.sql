@@ -8,7 +8,7 @@ INSERT INTO `schoolerzz`.`sz_006_schools`
 `SZ_006_PostalCode`,
 `SZ_006_Address`)
 VALUES
-(UUID_TO_BIN(UUID()),'Joyfe',12354,'JOY','Spain', 'Madrid',28017,'c/ Vital Aza, 65');
+(UUID_TO_BIN(UUID()),'Joyfe',1,'JOY','Spain', 'Madrid',28017,'c/ Vital Aza, 65');
 
 INSERT INTO `schoolerzz`.`sz_007_school_managers`
 (`SZ_007_Id`,
@@ -28,7 +28,7 @@ INSERT INTO `schoolerzz`.`sz_007_school_managers`
 `SZ_007_Schools_Id`
 )
 VALUES
-(UUID_TO_BIN(UUID()),'María Teresa','Martínez', 'Puche', curdate(),'Spanish','Spain','Madrid','28017','Calle Peter Peter, 4 2Z','mtere@mt.com','+34555555555', 'MJOY-MAMAPU', '1234', (SELECT SZ_006_Id FROM sz_006_schools limit 1));
+(UUID_TO_BIN(UUID()),'María Teresa','Martínez', 'Puche', curdate(),'Spanish','Spain','Madrid','28017','Calle Peter Peter, 4 2Z','mtere@mt.com','+34555555555', 'MJOY-MAMAPU', md5('1234'), (SELECT SZ_006_Id FROM sz_006_schools limit 1));
 
 INSERT INTO `schoolerzz`.`sz_008_teachers`
 (`SZ_008_Id`,
@@ -46,7 +46,7 @@ INSERT INTO `schoolerzz`.`sz_008_teachers`
 `SZ_008_Phone1`
 )
 VALUES
-(UUID_TO_BIN(UUID()), 'Guillermo','Pérez', 'Tomé',curdate(),'Spanish','Spain','Madrid','28017','Calle Colegio, 4 2Z','guille@gu.com','1234', '+34111111111');
+(UUID_TO_BIN(UUID()), 'Guillermo','Pérez', 'Tomé',curdate(),'Spanish','Spain','Madrid','28017','Calle Colegio, 4 2Z','guille@gu.com',md5('1234'), '+34111111111');
 
 INSERT INTO `schoolerzz`.`sz_002_students`
 (`SZ_002_Id`,
@@ -63,7 +63,7 @@ INSERT INTO `schoolerzz`.`sz_002_students`
 `SZ_002_Password`
 )
 VALUES
-(UUID_TO_BIN(UUID()), 'Óscar Vicente','Melgarejo', 'Pino',curdate(),'Spanish','Spain','Madrid','28017','Call Carmencita, 4 2Z','oscar@os.com','1234');
+(UUID_TO_BIN(UUID()), 'Óscar Vicente','Melgarejo', 'Pino',curdate(),'Spanish','Spain','Madrid','28017','Call Carmencita, 4 2Z','oscar@os.com',md5('1234'));
 
 INSERT INTO `schoolerzz`.`sz_003_parents`
 (`SZ_003_Id`,
@@ -81,7 +81,7 @@ INSERT INTO `schoolerzz`.`sz_003_parents`
 `SZ_003_Phone1`
 )
 VALUES
-(UUID_TO_BIN(UUID()), 'Pater','Noster', 'Muy Noster',curdate(),'Spanish','Spain','Madrid','28017','Calle Yo Claudio, 4 2Z','Pater@pa.com','1234', '+34666666666');
+(UUID_TO_BIN(UUID()), 'Pater','Noster', 'Muy Noster',curdate(),'Spanish','Spain','Madrid','28017','Calle Yo Claudio, 4 2Z','Pater@pa.com',md5('1234'), '+34666666666');
 
 INSERT INTO `schoolerzz`.`sz_203_students_parents`
 (`SZ_203_Id`,
@@ -135,15 +135,32 @@ INSERT INTO `schoolerzz`.`sz_001_groups`
 )
 VALUES
 (UUID_TO_BIN(UUID()),'Primaria', 1, 'A', (SELECT SZ_006_Id FROM sz_006_schools limit 1), (SELECT SZ_008_Id FROM sz_008_teachers limit 1));
-
+INSERT INTO SZ_017_Subjects(
+	SZ_017_Id,
+    SZ_017_Name
+)
+ VALUES (UUID_TO_BIN(UUID()), 'Matemáticas');
 INSERT INTO `schoolerzz`.`sz_102_groups_students`
 (
 	`SZ_102_Id`,
     `SZ_102_Groups_Id`,
-    `SZ_102_Students_Id`
+    `SZ_102_Students_Id`,
+     SZ_102_Subjects_Id,
+     SZ_102_Mark_1T,
+     SZ_102_Mark_2T,
+     SZ_102_Mark_3T,
+     SZ_102_Mark_F,
+     SZ_102_Absence_1T,
+     SZ_102_Absence_2T,
+     SZ_102_Absence_3T,
+     SZ_102_Absence_F,
+     SZ_102_J_Absence_1T,
+     SZ_102_J_Absence_2T,
+     SZ_102_J_Absence_3T,
+     SZ_102_J_Absence_F
 )
 VALUES
-(UUID_TO_BIN(UUID()),(SELECT SZ_001_Id FROM sz_001_groups limit 1), (SELECT SZ_002_Id FROM sz_002_students limit 1));
+(UUID_TO_BIN(UUID()),(SELECT SZ_001_Id FROM sz_001_groups limit 1), (SELECT SZ_002_Id FROM sz_002_students limit 1),(SELECT SZ_017_Id FROM sz_017_subjects limit 1),0,0,0,0,0,0,0,0,0,0,0,0);
 
 INSERT INTO `schoolerzz`.`sz_009_activities`
 (

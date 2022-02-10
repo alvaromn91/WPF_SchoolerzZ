@@ -317,7 +317,7 @@ END
 
 
 
-drop procedure GeneratePassword;
+drop procedure if exists GeneratePassword;
 
 DELIMITER //
 CREATE PROCEDURE GeneratePassword(out pv_word varchar(8))
