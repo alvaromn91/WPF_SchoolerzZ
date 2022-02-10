@@ -12,7 +12,7 @@ namespace CapaAccDatosB
 {
     public class AccesoDatos
     {
-        string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=1234;database=scholerzz;";
+        string connectionString = "datasource=localhost;port=3306;username=root;password=1234;database=schoolerzz;";
         MySqlConnection databaseConnection;
 
         public AccesoDatos()
@@ -33,18 +33,29 @@ namespace CapaAccDatosB
             databaseConnection.Close();
         }
        
-        public int Login(char pc_Type, string pv_Nick , string pv_Password )
+        public int Login(char pc_Char, string pv_Nick , string pv_Password )
         {
-            MySqlCommand cmd = new MySqlCommand("SELECT Login(?, ?, ?)", databaseConnection);
-            cmd.CommandType = CommandType.Text;
-            cmd.Parameters.AddWithValue("pc_Type",pc_Type);
-            cmd.Parameters.AddWithValue("pv_Nick", pv_Nick);
-            cmd.Parameters.AddWithValue("pv_Password", pv_Password);
+            
+            MySqlCommand cmd = new MySqlCommand("LoginAJ", databaseConnection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new MySqlParameter("pc_char", pc_Char));
+            cmd.Parameters.Add(new MySqlParameter("pv_username", pv_Nick));
+            cmd.Parameters.Add(new MySqlParameter("pv_password", pv_Password));
+
+
+            cmd.Parameters.Add(new MySqlParameter("pi_valid", MySqlDbType.Int32));
+            cmd.Parameters["pi_valid"].Direction = ParameterDirection.Output;
 
             EstablecerConexion();
-            int s = cmd.ExecuteNonQuery();
+
+            cmd.ExecuteNonQuery();
+            int s = (int)cmd.Parameters["pi_valid"].Value;
+            
             CerrarConexion();
-            return  s; //Lista<Object>
+            
+            return  s; 
         }
+
+        // Tenemos que ver como conseguir cerrar el stack panel de Login
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaAccDatosB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,6 +22,7 @@ namespace SchoolerzZ.Pages
     public partial class Login : Page
     {
         bool clicked = false;
+
         public Login()
         {
             InitializeComponent();
@@ -46,5 +48,61 @@ namespace SchoolerzZ.Pages
             }
             
         }
+
+        private void btn_Login_Click(object sender, RoutedEventArgs e)
+        {
+            bool log = false;
+            req1.Visibility = Visibility.Collapsed;
+            req2.Visibility = Visibility.Collapsed;
+            char rol;
+            switch (cmb_Type.SelectedIndex) 
+            {
+                case 0:
+                    rol = 'P';
+                    break;
+                case 1:
+                    rol = 'S';
+                    break;
+                case 2:
+                    rol = 'T';
+                    break;
+                case 3:
+                    rol = 'M';
+                    break;
+                default:
+                    rol = 'X';
+                    break;
+            }
+            if (rol == 'X')
+            {
+                MessageBox.Show("Elige un tipo de usuario");
+            }
+            else
+            {
+                if (tb_User.Text == string.Empty)
+                {
+                    req1.Visibility = Visibility.Visible;
+                    req1.Foreground = Brushes.Red;
+                }
+                if (tb_Pass.Password == string.Empty)
+                {
+                    req2.Visibility = Visibility.Visible;
+                    req2.Foreground = Brushes.Red;
+                }
+                AccesoDatos con = new AccesoDatos();
+                int r = con.Login(rol, tb_User.Text.ToString(), Student.GetMD5(tb_Pass.Password.ToString()));
+                if (r == 0)
+                {
+                    MessageBox.Show("Has entrado");
+                    log = true;
+                }
+                else
+                {
+                    MessageBox.Show("Incorrecto");
+
+                }
+            }            
+        }
+
     }
 }

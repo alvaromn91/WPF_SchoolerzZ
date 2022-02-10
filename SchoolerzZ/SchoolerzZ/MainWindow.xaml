@@ -25,14 +25,14 @@
             <RowDefinition Height="9*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <StackPanel Visibility="Visible"> <!--IMAGEN MOJO-->
+        <StackPanel Visibility="Collapsed" x:Name="stp_GorilaMenuLat"> <!--IMAGEN MOJO-->
             <Image Source="images/branded_logo.png" Height="250"/>
         </StackPanel>
-        <StackPanel x:Name="logo_mid" Grid.RowSpan="2" VerticalAlignment="Center" Visibility="Collapsed">
+        <StackPanel x:Name="stp_GorilaMid" Grid.RowSpan="2" VerticalAlignment="Center" Visibility="Visible">
             <Image Source="images/logo_mid.png"/>
         </StackPanel>
         
-        <StackPanel Grid.Column="0" Grid.Row="1" Visibility="Visible">
+        <StackPanel Grid.Column="0" Grid.Row="1" Visibility="Collapsed" x:Name="stp_MenuLat">
             <!--MENÚ LATERAL-->
             <Button x:Name="btn_Teachers" HorizontalContentAlignment="Left" Click="btn_Teachers_Click" Background="#B3E8C56A" BorderBrush="#B2E8C56A">
                 <!--BOTÓN PROFESORES-->
