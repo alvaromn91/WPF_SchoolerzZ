@@ -29,6 +29,8 @@ namespace SchoolerzZ
             InitializeComponent();
             fra_Log.NavigationService.Navigate(log);
             // Tenemos que ver como conseguir cerrar el stack panel de Login
+            
+
         }
 
         private void btn_Students_Click(object sender, RoutedEventArgs e)

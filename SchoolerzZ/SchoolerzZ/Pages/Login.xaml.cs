@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SchoolerzZ;
 
 namespace SchoolerzZ.Pages
 {
@@ -95,6 +96,7 @@ namespace SchoolerzZ.Pages
                 {
                     MessageBox.Show("Has entrado");
                     log = true;
+                    
                 }
                 else
                 {
@@ -103,6 +105,5 @@ namespace SchoolerzZ.Pages
                 }
             }            
         }
-
     }
 }

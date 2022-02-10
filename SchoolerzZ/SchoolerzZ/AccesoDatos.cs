@@ -54,6 +54,7 @@ namespace CapaAccDatosB
             CerrarConexion();
             
             return  s; 
+            
         }
 
         // Tenemos que ver como conseguir cerrar el stack panel de Login
