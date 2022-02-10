@@ -279,26 +279,29 @@ END
 	Si devuelve 0 el usuario y la contraseña es correcta
     Si devuelve -1 el usuario y la contrase son incorrectas*/
 
+/* PA de login
+	Si devuelve 0 el usuario y la contraseña es correcta
+    Si devuelve -1 el usuario y la contrase son incorrectas*/
+
 DROP PROCEDURE IF EXISTS LoginAJ;
 DELIMITER //
-CREATE PROCEDURE LoginAJ(in pv_username varchar(40), in pv_password varchar(200), out pi_valid int)
+CREATE  PROCEDURE LoginAJ(in pc_char char, in pv_username varchar(40), in pv_password varchar(200), out pi_valid int)
 BEGIN
 	Declare vb_id binary(16);
-    Declare vc_type char;
+    Declare vv_user varchar(40);
+    set vv_user = upper(concat(pc_char,pv_username));
     
-   set vc_type = UPPER(SUBSTR(pv_username,1,1));
-   
-   IF vc_type = 'S' then 
-		set vb_id = (Select SZ_002_Id FROM sz_002_students WHERE SZ_002_Nick LIKE pv_username AND SZ_002_Password LIKE pv_password);
+   IF pc_char = upper('S') then 
+		set vb_id = (Select SZ_002_Id FROM sz_002_students WHERE SZ_002_Nick LIKE vv_user AND SZ_002_Password LIKE pv_password);
 	ELSE
-		IF vc_type = 'T' then 
-			set vb_id = (Select SZ_008_Id FROM sz_008_teachers WHERE SZ_008_Nick LIKE pv_username AND SZ_008_Password LIKE pv_password);
+		IF pc_char = upper('T') then 
+			set vb_id = (Select SZ_008_Id FROM sz_008_teachers WHERE SZ_008_Nick LIKE vv_user AND SZ_008_Password LIKE pv_password);
 		ELSE
-			IF vc_type = 'M' then 
-				set vb_id = (Select SZ_007_Id FROM sz_007_school_managers WHERE SZ_007_Nick LIKE pv_username AND SZ_007_Password LIKE pv_password);
+			IF pc_char = upper('M') then 
+				set vb_id = (Select SZ_007_Id FROM sz_007_school_managers WHERE SZ_007_Nick LIKE vv_user AND SZ_007_Password LIKE pv_password);
 			ELSE 
-				IF vc_type = 'P' then 
-					set vb_id = (Select SZ_003_Id FROM sz_003_parents WHERE SZ_003_Nick LIKE pv_username AND SZ_003_Password LIKE pv_password);
+				IF pc_char = upper('P') then 
+					set vb_id = (Select SZ_003_Id FROM sz_003_parents WHERE SZ_003_Nick LIKE vv_user AND SZ_003_Password LIKE pv_password);
 				END IF;
 			END IF;
 		END IF;
@@ -310,6 +313,7 @@ BEGIN
 	END IF;
 END
 // DELIMITER ;
+
 
 
 
