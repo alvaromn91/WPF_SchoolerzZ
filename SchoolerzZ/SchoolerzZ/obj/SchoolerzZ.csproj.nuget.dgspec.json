@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\admin-dam2b\\Desktop\\WPF-SchoolerzZ\\WPF_SchoolerzZ\\SchoolerzZ\\SchoolerzZ\\SchoolerzZ.csproj": {}
+    "C:\\Users\\admin-dam2b\\Desktop\\GIT\\WPF_SchoolerzZ\\SchoolerzZ\\SchoolerzZ\\SchoolerzZ.csproj": {}
   },
   "projects": {
-    "C:\\Users\\admin-dam2b\\Desktop\\WPF-SchoolerzZ\\WPF_SchoolerzZ\\SchoolerzZ\\SchoolerzZ\\SchoolerzZ.csproj": {
+    "C:\\Users\\admin-dam2b\\Desktop\\GIT\\WPF_SchoolerzZ\\SchoolerzZ\\SchoolerzZ\\SchoolerzZ.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\admin-dam2b\\Desktop\\WPF-SchoolerzZ\\WPF_SchoolerzZ\\SchoolerzZ\\SchoolerzZ\\SchoolerzZ.csproj",
+        "projectUniqueName": "C:\\Users\\admin-dam2b\\Desktop\\GIT\\WPF_SchoolerzZ\\SchoolerzZ\\SchoolerzZ\\SchoolerzZ.csproj",
         "projectName": "SchoolerzZ",
-        "projectPath": "C:\\Users\\admin-dam2b\\Desktop\\WPF-SchoolerzZ\\WPF_SchoolerzZ\\SchoolerzZ\\SchoolerzZ\\SchoolerzZ.csproj",
+        "projectPath": "C:\\Users\\admin-dam2b\\Desktop\\GIT\\WPF_SchoolerzZ\\SchoolerzZ\\SchoolerzZ\\SchoolerzZ.csproj",
         "packagesPath": "C:\\Users\\admin-dam2b\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\admin-dam2b\\Desktop\\WPF-SchoolerzZ\\WPF_SchoolerzZ\\SchoolerzZ\\SchoolerzZ\\obj\\",
+        "outputPath": "C:\\Users\\admin-dam2b\\Desktop\\GIT\\WPF_SchoolerzZ\\SchoolerzZ\\SchoolerzZ\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\admin-dam2b\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -67,7 +67,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

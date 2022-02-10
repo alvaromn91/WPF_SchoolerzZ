@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WMVwDDxHqGfgYFg2iNsgyoHKw+pw5fJj3tYE4lCHL/XNu3sWfY1RRtIIIQQpATpgaUHbUHEfuYV88JCj/8NYEA==",
+  "dgSpecHash": "aV7v0oTiiBXApJPWGy+65lYwpC/PbxSa+lhQljsDAhMPPAU9L7svqVI4zVZ+q8LKvA61js8gQkGZ2dZmQuf15A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\admin-dam2b\\Desktop\\WPF-SchoolerzZ\\WPF_SchoolerzZ\\SchoolerzZ\\SchoolerzZ\\SchoolerzZ.csproj",
+  "projectFilePath": "C:\\Users\\admin-dam2b\\Desktop\\GIT\\WPF_SchoolerzZ\\SchoolerzZ\\SchoolerzZ\\SchoolerzZ.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\admin-dam2b\\.nuget\\packages\\fontawesome.wpf\\4.7.0.9\\fontawesome.wpf.4.7.0.9.nupkg.sha512",
     "C:\\Users\\admin-dam2b\\.nuget\\packages\\materialdesigncolors\\2.0.4\\materialdesigncolors.2.0.4.nupkg.sha512",
