@@ -27,10 +27,15 @@ namespace SchoolerzZ
         public MainWindow()
         {
             InitializeComponent();
-            fra_Log.NavigationService.Navigate(log);
+            mostrarPaginaInicio();
             // Tenemos que ver como conseguir cerrar el stack panel de Login
             
 
+        }
+        public void mostrarPaginaInicio()
+        {
+            App.Parent = this;
+            this.parent.Navigate(new Login());
         }
 
         private void btn_Students_Click(object sender, RoutedEventArgs e)
@@ -77,7 +82,7 @@ namespace SchoolerzZ
 
         private void btn_Add_S_Click(object sender, RoutedEventArgs e)
         {
-            fra_Log.NavigationService.Navigate(student);
+            //fra_Log.NavigationService.Navigate(student);
             title.Visibility = Visibility.Collapsed;
         }
 
@@ -100,6 +105,13 @@ namespace SchoolerzZ
         private void btn_Parents_Click(object sender, RoutedEventArgs e)
         {
             stp_SubM_Parents.Visibility = Visibility.Visible;
+        }
+        public void HandleNavigating(Object sender, NavigatingCancelEventArgs e)
+        {
+            if (e.NavigationMode == NavigationMode.Forward || e.NavigationMode == NavigationMode.Back)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

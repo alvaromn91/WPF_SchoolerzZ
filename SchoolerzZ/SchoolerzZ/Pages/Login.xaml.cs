@@ -52,7 +52,6 @@ namespace SchoolerzZ.Pages
 
         private void btn_Login_Click(object sender, RoutedEventArgs e)
         {
-            bool log = false;
             req1.Visibility = Visibility.Collapsed;
             req2.Visibility = Visibility.Collapsed;
             char rol;
@@ -95,13 +94,16 @@ namespace SchoolerzZ.Pages
                 if (r == 0)
                 {
                     MessageBox.Show("Has entrado");
-                    log = true;
-                    
+                    App.Parent.parent.Navigate(new AddStudent());
+                    App.Parent.stp_MenuLat.Visibility = Visibility.Visible;
+                    App.Parent.title.Visibility = Visibility.Collapsed;
+                    App.Parent.stp_GorilaMid.Visibility = Visibility.Collapsed;
+                    App.Parent.stp_GorilaMenuLat.Visibility = Visibility.Visible;
+
                 }
                 else
                 {
                     MessageBox.Show("Incorrecto");
-
                 }
             }            
         }

@@ -16,5 +16,6 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/mojo.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/school.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/students.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("fakesassemblies/mysql.data.fakes.dll")]
 
 

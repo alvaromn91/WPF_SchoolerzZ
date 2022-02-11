@@ -279,10 +279,6 @@ END
 	Si devuelve 0 el usuario y la contraseña es correcta
     Si devuelve -1 el usuario y la contrase son incorrectas*/
 
-/* PA de login
-	Si devuelve 0 el usuario y la contraseña es correcta
-    Si devuelve -1 el usuario y la contrase son incorrectas*/
-
 DROP PROCEDURE IF EXISTS LoginAJ;
 DELIMITER //
 CREATE  PROCEDURE LoginAJ(in pc_char char, in pv_username varchar(40), in pv_password varchar(200), out pi_valid int)
@@ -331,4 +327,19 @@ Begin
 	End While;
 end
 
+// DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS LoginTeacherAO;
+DELIMITER //
+CREATE PROCEDURE LoginTeacherAO(IN username VARCHAR(40), IN pwd VARCHAR(250), OUT valid INT)
+BEGIN
+	DECLARE exist BINARY(16);
+    SELECT SZ_008_Id FROM sz_008_teachers  WHERE SZ_008_Nick LIKE username AND SZ_008_Password LIKE pwd INTO exist;
+    IF exist IS NOT NULL THEN 
+		SET valid = 0;
+    ELSE
+		SET valid = -1;
+	END IF;
+END
 // DELIMITER ;

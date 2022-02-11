@@ -31,7 +31,7 @@
         <StackPanel x:Name="stp_GorilaMid" Grid.RowSpan="2" VerticalAlignment="Center" Visibility="Visible">
             <Image Source="images/logo_mid.png"/>
         </StackPanel>
-        
+
         <StackPanel Grid.Column="0" Grid.Row="1" Visibility="Collapsed" x:Name="stp_MenuLat">
             <!--MENÚ LATERAL-->
             <Button x:Name="btn_Teachers" HorizontalContentAlignment="Left" Click="btn_Teachers_Click" Background="#B3E8C56A" BorderBrush="#B2E8C56A">
@@ -97,54 +97,42 @@
                 </StackPanel>
                 <Button x:Name="btn_Data_Sc" Click="btn_Add_S_Click"  Content="Datos del Colegio" HorizontalContentAlignment="Left" Padding="20,0,0,0" Background="#66E8C56A" BorderBrush="#66E8C56A"/>
             </StackPanel>
-            
-                
-                <!--BOTÓN MANAGERS-->
-        </StackPanel>
 
-        
-        
-        
-        
-        
-        
-        
-               
-        
-        
-        
-        
-        
-        
-        
+
+            <!--BOTÓN MANAGERS-->
+        </StackPanel>
         
         <StackPanel x:Name="title" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" Visibility="Visible"><!--TITULO-->
             <!--<TextBlock Text="SchoolerzZ" FontSize="120" HorizontalAlignment="Center" FontFamily="Bernard MT Condensed" FontWeight="Bold" Foreground="#FF289A8B"/>-->
             <Image Source="images/brand.png" Height="197" Margin="0,0,40,0"/>
         </StackPanel>
         
-        <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center"> <!--BOTONES REDES SOCIALES-->
-            <Button x:Name="btn_twitter" HorizontalAlignment="Center" Click="btn_Twitter_Click" Background="#00F0F8FF" BorderBrush="#00E8C56A" Padding="16,4,16,4" FontSize="1" Height="46" Width="72" Cursor="Hand">
-                <Button.Content>
-                    <fa:ImageAwesome Icon="Twitter" Foreground="Aqua" Width="40" Height="40"></fa:ImageAwesome>
-                </Button.Content>
-            </Button>
+        
+        <StackPanel Background="#FFD06E3F" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="25,15,0,0" VerticalAlignment="Center">
+                <!--BOTONES REDES SOCIALES-->
+                <Button x:Name="btn_twitter" HorizontalAlignment="Center" Click="btn_Twitter_Click" Background="#00F0F8FF" BorderBrush="#00E8C56A" Padding="16,4,16,4" FontSize="1" Height="46" Width="72" Cursor="Hand">
+                    <Button.Content>
+                        <fa:ImageAwesome Icon="Twitter" Foreground="Aqua" Width="40" Height="40"></fa:ImageAwesome>
+                    </Button.Content>
+                </Button>
 
-            <Button x:Name="btn_Insta" HorizontalAlignment="Center" Click="btn_Instagram_Click" Background="#00F0F8FF" BorderBrush="#00E8C56A" Height="48">
-                <Button.Content>
-                    <fa:ImageAwesome Icon="Instagram" Foreground="#FFD100FF" Width="40" Height="40"></fa:ImageAwesome>
-                </Button.Content>
-            </Button>
+                <Button x:Name="btn_Insta" HorizontalAlignment="Center" Click="btn_Instagram_Click" Background="#00F0F8FF" BorderBrush="#00E8C56A" Height="48">
+                    <Button.Content>
+                        <fa:ImageAwesome Icon="Instagram" Foreground="#FFD100FF" Width="40" Height="40"></fa:ImageAwesome>
+                    </Button.Content>
+                </Button>
 
-            <Button x:Name="btn_Facebook" HorizontalAlignment="Center" VerticalAlignment="Center"  Click="btn_Facebook_Click" Background="#00F0F8FF" BorderBrush="#00E8C56A" Height="46">
-                <Button.Content>
-                    <fa:ImageAwesome Icon="FacebookOfficial" Foreground="Blue" Width="40" Height="40" RenderTransformOrigin="0.601,-0.133"/>
-                </Button.Content>
-            </Button>
-            
+                <Button x:Name="btn_Facebook" HorizontalAlignment="Center" VerticalAlignment="Center"  Click="btn_Facebook_Click" Background="#00F0F8FF" BorderBrush="#00E8C56A" Height="46">
+                    <Button.Content>
+                        <fa:ImageAwesome Icon="FacebookOfficial" Foreground="Blue" Width="40" Height="40" RenderTransformOrigin="0.601,-0.133"/>
+                    </Button.Content>
+                </Button>
+
+            </StackPanel>
         </StackPanel>
-        <StackPanel Background="Brown" Grid.Column="1" Grid.Row="2"/>
-        <Frame x:Name="fra_Log" Grid.Column="1" Grid.Row="1" NavigationUIVisibility="Hidden"/>
+        <Frame x:Name="parent" Grid.Column="1" Grid.Row="1" NavigationUIVisibility="Hidden" Navigating="HandleNavigating"/>
+
         <!-- Frame para el Login-->
     </Grid>
 </Window>
