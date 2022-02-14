@@ -47,12 +47,20 @@ namespace SchoolerzZ.Pages
             
             Nullable<bool> result = openFileDlg.ShowDialog();
 
-            string archi = openFileDlg.FileName;
-            BitmapImage bi = new BitmapImage();
-            bi.BeginInit();
-            bi.UriSource = new Uri(archi);
-            bi.EndInit();
-            img_Photo.Source = bi;  
+            try
+            {
+                string archi = openFileDlg.FileName;
+                BitmapImage bi = new BitmapImage();
+                bi.BeginInit();
+                bi.UriSource = new Uri(archi);
+                bi.EndInit();
+                img_Photo.Source = bi;
+            }
+            catch
+            {
+                MessageBox.Show("No has elegido Foto");
+            }
+            
         }
     }
 }

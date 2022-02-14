@@ -60,8 +60,7 @@ create procedure AddStudent(in pv_School_Manager_Nick varchar(50),
                             in pv_Password varchar(200),
                             in pt_Medical TEXT,
                             in pt_Observations TEXT,
-                            in pt_Photo_Internal_Route TEXT,
-                            in pv_Licence varchar(29),
+                            in pt_Photo_Internal_Route TEXT, 
                             out pi_r int)
 begin 
 	declare vv_nick varchar(15);
@@ -95,9 +94,9 @@ begin
     pv_PostalCode,
     pv_Address,
     pv_Email,
-    pv_Password
+    md5(pv_Password)
     );
-    set vb_id = (SELECT SZ_002_Id from sz_002_students where SZ_002_Name like pv_Name and SZ_002_SN1 like pv_SN1 and SZ_002_SN2 like pv_SN2);
+    set vb_id = (SELECT SZ_002_Id from sz_002_students where SZ_002_Name like pv_Name and SZ_002_SN1 like pv_SN1 and SZ_002_SN2 like pv_SN2 and SZ_002_Nick is NULL);
     if pt_Medical not like '' then
 		update sz_002_students set SZ_002_Medical = pt_Medical where SZ_002_Id = vb_id;
     end if;
@@ -111,8 +110,9 @@ begin
 		update sz_002_students set SZ_002_Photo_Internal_Route = pt_Photo_Internal_Route where SZ_002_Id = vb_id;
     end if;
     call CreateNick('S', vv_school_name, vb_id, @r_nick);
+    Call GetLicence(@r_licence);
     UPDATE sz_002_students SET SZ_002_Nick = (select @r_nick) WHERE SZ_002_Id = vb_id;
-    UPDATE sz_015_Licences SET sz_015_Students_Id = vb_id, sz_015_Using = 1 where sz_015_Licence = pv_Licence;
+    UPDATE sz_015_s_licences SET sz_015_Students_Id = vb_id, sz_015_Using = 1 where sz_015_Licence = @r_licence;
     set pi_r = 0;
 end;
 // DELIMITER ;
@@ -266,9 +266,9 @@ BEGIN
     declare vv_new_lic varchar(29);
 		WHILE pi_n_lic > 0 DO
 			set vv_new_lic = GenerateLicence();
-			set vb_id = (select SZ_015_Id from sz_015_licences where SZ_015_Licence like (vv_new_lic));
+			set vb_id = (select SZ_015_Id from sz_015_s_licences where SZ_015_Licence like (vv_new_lic));
 			if vb_id <=> NULL then
-				insert into sz_015_licences(SZ_015_Id, SZ_015_Licence) values(UUID_TO_BIN(UUID()), vv_new_lic);
+				insert into sz_015_s_licences(SZ_015_Id, SZ_015_Licence) values(UUID_TO_BIN(UUID()), vv_new_lic);
 				set pi_n_lic = pi_n_lic - 1; 
             end if;
         END WHILE;
@@ -285,28 +285,47 @@ CREATE  PROCEDURE LoginAJ(in pc_char char, in pv_username varchar(40), in pv_pas
 BEGIN
 	Declare vb_id binary(16);
     Declare vv_user varchar(40);
+    Declare vv_Licence varchar(29);
     set vv_user = upper(concat(pc_char,pv_username));
     
    IF pc_char = upper('S') then 
-		set vb_id = (Select SZ_002_Id FROM sz_002_students WHERE SZ_002_Nick LIKE vv_user AND SZ_002_Password LIKE pv_password);
+        set vb_id = (Select SZ_002_Id FROM sz_002_students WHERE SZ_002_Nick LIKE vv_user AND SZ_002_Password LIKE pv_password);
+        set vv_Licence = (SELECT sz_015_Licence FROM sz_015_s_licences where sz_015_Student_Id = vb_id);
+        IF vb_id IS NOT NULL and vv_Licence IS NOT NULL THEN
+			set pi_valid = 0;
+		ELSE
+			set pi_valid = -1;
+		END IF;
 	ELSE
 		IF pc_char = upper('T') then 
 			set vb_id = (Select SZ_008_Id FROM sz_008_teachers WHERE SZ_008_Nick LIKE vv_user AND SZ_008_Password LIKE pv_password);
+            set vv_Licence = (SELECT sz_016_Licence FROM sz_016_t_licences where sz_016_Student_Id = vb_id);
+            IF vb_id IS NOT NULL and vv_Licence IS NOT NULL THEN
+				set pi_valid = 0;
+			ELSE
+				set pi_valid = -1;
+			END IF;
 		ELSE
 			IF pc_char = upper('M') then 
 				set vb_id = (Select SZ_007_Id FROM sz_007_school_managers WHERE SZ_007_Nick LIKE vv_user AND SZ_007_Password LIKE pv_password);
+                IF vb_id IS NOT NULL THEN
+					set pi_valid = 0;
+				ELSE
+					set pi_valid = -1;
+				END IF;
 			ELSE 
 				IF pc_char = upper('P') then 
 					set vb_id = (Select SZ_003_Id FROM sz_003_parents WHERE SZ_003_Nick LIKE vv_user AND SZ_003_Password LIKE pv_password);
+                    IF vb_id IS NOT NULL THEN
+						set pi_valid = 0;
+					ELSE
+						set pi_valid = -1;
+					END IF;
 				END IF;
 			END IF;
 		END IF;
 	END IF;
-    IF vb_id IS NOT NULL THEN
-		set pi_valid = 0;
-	ELSE
-		set pi_valid = -1;
-	END IF;
+    
 END
 // DELIMITER ;
 
@@ -343,3 +362,26 @@ BEGIN
 	END IF;
 END
 // DELIMITER ;
+
+drop procedure if exists GetLicence;
+
+DELIMITER //
+create procedure GetLicence(out pv_Licence varchar(29))
+begin
+    set pv_Licence = (select sz_015_Licence from sz_015_s_licences where SZ_015_Using = 0 limit 1 );
+end
+// DELIMITER ;
+
+
+
+DROP PROCEDURE IF EXISTS GetStudent;
+
+DELIMITER //
+CREATE PROCEDURE GetStudent(in pv_Name varchar(50),
+							in pv_SN1 varchar(100),
+							in pv_SN2 varchar(100))
+BEGIN
+	select * from sz_002_students where sz_002_Name = pv_Name and sz_002_SN1 = pv_SN1 and sz_002_SN2 = pv_SN2; 
+END
+// DELIMITER ;
+

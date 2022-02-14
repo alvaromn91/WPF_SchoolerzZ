@@ -93,7 +93,6 @@ namespace SchoolerzZ.Pages
                 int r = con.Login(rol, tb_User.Text.ToString(), Student.GetMD5(tb_Pass.Password.ToString()));
                 if (r == 0)
                 {
-                    MessageBox.Show("Has entrado");
                     App.Parent.parent.Navigate(new AddStudent());
                     App.Parent.stp_MenuLat.Visibility = Visibility.Visible;
                     App.Parent.title.Visibility = Visibility.Collapsed;

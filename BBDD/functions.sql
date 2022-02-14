@@ -1,3 +1,5 @@
+SET GLOBAL log_bin_trust_function_creators = 1;
+
 drop function if exists GenerateLicence;
 DELIMITER //
 CREATE FUNCTION GenerateLicence()
