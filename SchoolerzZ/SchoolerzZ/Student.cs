@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
 
+
 namespace SchoolerzZ
 {
     class Student
@@ -64,14 +65,18 @@ namespace SchoolerzZ
 
         public string GeneratePassword()
         {
+            AccesoDatos nuevo = new AccesoDatos();
             string pass;
-            //Llamar al procedimiento GeneratePassword();
-            pass = "";
+            pass = nuevo.GeneratePassword();
             pass = GetMD5(pass);
 
             return pass;
             
         }
+        //public int AddStudent(string name, string surname1, string surname2, DateTime birth, string nationality, string country, string city, string postalCode, string address, string email, string medical, string observations, string photoRoute)
+        //{
+        //    GeneratePassword();
+        //}
 
         public static string GetMD5(string str)
         {

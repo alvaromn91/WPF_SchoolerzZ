@@ -94,7 +94,7 @@ begin
 		pv_PostalCode,
 		pv_Address,
 		pv_Email,
-		md5(pv_Password)
+		pv_Password
 		);
 		set vb_id = (SELECT SZ_002_Id from sz_002_students where SZ_002_Name like pv_Name and SZ_002_SN1 like pv_SN1 and SZ_002_SN2 like pv_SN2);
 		if pt_Medical not like '' then
@@ -367,3 +367,25 @@ BEGIN
 END
 // DELIMITER ;
 
+drop procedure if exists GetLicence;
+DELIMITER //
+CREATE PROCEDURE GetLicence(in pv_School_Manager varchar(50),
+							out pv_Licence varchar(29))
+BEGIN
+	set pv_Licence = (select l.sz_015_Licence from sz_015_school_licences l join sz_007_school_managers m on l.sz_015_School_Id = m.sz_007_Schools_Id where m.sz_007_Nick like upper(pv_School_Manager));
+END
+// DELIMITER ;
+
+DROP PROCEDURE IF EXISTS GetManager;
+
+DELIMITER //
+CREATE PROCEDURE GetManager(in pv_Nick varchar(15),
+							out pv_name varchar(50),
+                            out pv_sn1 varchar(50),
+                            out pv_sn2 varchar(15))
+BEGIN
+	select m.sz_007_Name into pv_name from sz_007_school_managers m where m.sz_007_Nick = pv_Nick;
+    select m.sz_007_SN1 into pv_sn1 from sz_007_school_managers m where m.sz_007_Nick = pv_Nick;
+    select m.sz_007_SN2 into pv_sn2 from sz_007_school_managers m where m.sz_007_Nick = pv_Nick;
+END
+// DELIMITER ;

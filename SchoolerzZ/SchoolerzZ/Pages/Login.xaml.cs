@@ -1,4 +1,4 @@
-﻿using CapaAccDatosB;
+﻿using SchoolerzZ;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,6 +55,7 @@ namespace SchoolerzZ.Pages
             req1.Visibility = Visibility.Collapsed;
             req2.Visibility = Visibility.Collapsed;
             char rol;
+            string user;
             switch (cmb_Type.SelectedIndex) 
             {
                 case 0:

@@ -14,5 +14,6 @@ namespace SchoolerzZ
     public partial class App : Application
     {
         public static MainWindow Parent;
+        public static Pages.Login login;
     }
 }

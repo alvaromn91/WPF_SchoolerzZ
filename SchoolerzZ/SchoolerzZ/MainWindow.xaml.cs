@@ -24,18 +24,23 @@ namespace SchoolerzZ
     {
         Login log = new Login();
         AddStudent student = new AddStudent();
+        SchoolManager manager; 
         public MainWindow()
         {
             InitializeComponent();
             mostrarPaginaInicio();
-            // Tenemos que ver como conseguir cerrar el stack panel de Login
-            
-
+            if (App.login.cmb_Type.SelectedIndex == 3) //3 porque es lo que devuelve el ComboBox cuando esta seleccionado el SchoolManager
+            { 
+                manager = new SchoolManager(App.login.tb_User.Text.ToString()); 
+                // A partir de aquí pasar al datacontext
+            }
         }
         public void mostrarPaginaInicio()
         {
             App.Parent = this;
-            this.parent.Navigate(new Login());
+            Login nuevo = new Login();
+            this.parent.Navigate(nuevo);
+            manager = new SchoolManager(nuevo.tb_User.Text.ToString());
         }
 
         private void btn_Students_Click(object sender, RoutedEventArgs e)
