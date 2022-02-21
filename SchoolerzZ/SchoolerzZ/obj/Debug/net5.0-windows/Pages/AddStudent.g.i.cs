@@ -176,7 +176,7 @@ namespace SchoolerzZ.Pages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/SchoolerzZ;component/pages/addstudent.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/SchoolerzZ;V1.0.0.0;component/pages/addstudent.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Pages\AddStudent.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

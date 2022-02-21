@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using SchoolerzZ;
+
 
 namespace SchoolerzZ.Pages
 {
@@ -94,6 +94,7 @@ namespace SchoolerzZ.Pages
                 int r = con.Login(rol, tb_User.Text.ToString(), Student.GetMD5(tb_Pass.Password.ToString()));
                 if (r == 0)
                 {
+                    App.Parent.DataContext = new SchoolManager(tb_User.Text.ToString());
                     App.Parent.parent.Navigate(new AddStudent());
                     App.Parent.stp_MenuLat.Visibility = Visibility.Visible;
                     App.Parent.title.Visibility = Visibility.Collapsed;

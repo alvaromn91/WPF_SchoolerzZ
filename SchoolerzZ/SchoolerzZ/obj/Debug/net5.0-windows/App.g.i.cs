@@ -62,7 +62,7 @@ namespace SchoolerzZ {
             
             #line default
             #line hidden
-            System.Uri resourceLocater = new System.Uri("/SchoolerzZ;component/app.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/SchoolerzZ;V1.0.0.0;component/app.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\App.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
