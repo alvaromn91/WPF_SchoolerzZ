@@ -55,5 +55,28 @@ namespace SZ
 
             return s;
         }
+        public List<string> GetManager(string Manager)
+        {
+            List<string> lista = new List<string>();
+            MySqlCommand cmd = new MySqlCommand("GetManager", databaseConnection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new MySqlParameter("pv_Nick", Manager));
+            cmd.Parameters.Add(new MySqlParameter("pv_name", MySqlDbType.VarChar));
+            cmd.Parameters.Add(new MySqlParameter("pv_sn1", MySqlDbType.VarChar));
+            cmd.Parameters.Add(new MySqlParameter("pv_sn2", MySqlDbType.VarChar));
+            cmd.Parameters["pv_name"].Direction = ParameterDirection.Output;
+            cmd.Parameters["pv_sn1"].Direction = ParameterDirection.Output;
+            cmd.Parameters["pv_sn2"].Direction = ParameterDirection.Output;
+
+            EstablecerConexion();
+
+            cmd.ExecuteNonQuery();
+            lista.Add(cmd.Parameters["pv_name"].Value.ToString());
+            lista.Add(cmd.Parameters["pv_sn1"].Value.ToString());
+            lista.Add((string)cmd.Parameters["pv_sn2"].Value.ToString());
+            CerrarConexion();
+            return lista;
+
+        }
     }    
 }

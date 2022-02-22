@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SchoolerzZ;
+using SchoolerzZ.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,6 +33,7 @@ namespace SZ.Pages
             req1.Visibility = Visibility.Collapsed;
             req2.Visibility = Visibility.Collapsed;
             char rol;
+            string bind;
             switch (cmb_Type.SelectedIndex)
             {
                 case 0:
@@ -69,16 +72,22 @@ namespace SZ.Pages
                 int r = con.Login(rol, tb_User.Text.ToString(), tb_Pass.Password.ToString());
                 if (r == 0)
                 {
+                    tb_wrong_pass.Visibility = Visibility.Collapsed;
+                    
+                    bind = rol + tb_User.Text.ToString();
+                    App.Parent.DataContext = new SchoolManager(bind);
                     App.Parent.stp_MenuLat.Visibility = Visibility.Visible;
+                    App.Parent.parent.Navigate(new MainMenu());
                     App.Parent.title.Visibility = Visibility.Collapsed;
+                    App.Parent.title2.Visibility = Visibility.Visible;
                     App.Parent.stp_GorilaMid.Visibility = Visibility.Collapsed;
                     App.Parent.stp_GorilaMenuLat.Visibility = Visibility.Visible;
-                    MessageBox.Show("Correcto");
+                    
+                    
                 }
                 else
                 {
-                    MessageBox.Show("Incorrecto");
-                    
+                    tb_wrong_pass.Visibility = Visibility.Visible;
                 }
             }
         }

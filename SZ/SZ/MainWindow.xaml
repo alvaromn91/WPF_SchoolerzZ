@@ -45,7 +45,7 @@
         -->
         <StackPanel Grid.Column="0" Grid.Row="1" Visibility="Collapsed" x:Name="stp_MenuLat">
             <!--BOTÓN PROFESORES-->
-            <Button x:Name="btn_Teachers" HorizontalContentAlignment="Left" Background="#B3E8C56A" BorderBrush="#B2E8C56A">
+            <Button x:Name="btn_Teachers" Click="btn_Teachers_Click" HorizontalContentAlignment="Left" Background="#B3E8C56A" BorderBrush="#B2E8C56A">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="Images/Classroom.png" Width="30" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-12,0,0,0" />
                     <TextBlock VerticalAlignment="Center" Margin="10,0,0,0">Profesores</TextBlock>
@@ -54,12 +54,12 @@
             
             <!--SUBMENU 1 PROFESORES-->
             <StackPanel x:Name="stp_SubM_Teachers" Visibility="Collapsed">
-                <Button x:Name="btn_Add_Teachers" Content="Añadir Profesor" HorizontalContentAlignment="Left" Padding="20,0,0,0" Background="#66E8C56A" BorderBrush="#66E8C56A"/>
+                <Button x:Name="btn_Add_Teachers" Click="btn_Add_Teachers_Click" Content="Añadir Profesor" HorizontalContentAlignment="Left" Padding="20,0,0,0" Background="#66E8C56A" BorderBrush="#66E8C56A"/>
             </StackPanel>
 
 
             <!--BOTÓN ESTUDIANTES-->
-            <Button x:Name="btn_Students" HorizontalContentAlignment="Left"  Background="#B2E8C56A" BorderBrush="#B2E8C56A" VerticalAlignment="Center">
+            <Button x:Name="btn_Students" Click="btn_Students_Click" HorizontalContentAlignment="Left"  Background="#B2E8C56A" BorderBrush="#B2E8C56A" VerticalAlignment="Center">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="Images/Students.png" Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-12,0,0,0" />
                     <TextBlock VerticalAlignment="Center" Margin="10,0,0,0">Estudiantes</TextBlock>
@@ -68,21 +68,21 @@
             
             <!--SUBMENU 1 ESTUDIANTES-->
             <StackPanel x:Name="stp_SubM_Students" Visibility="Collapsed">
-                <Button x:Name="btn_Search_S" Content="Buscar" HorizontalContentAlignment="Left" Padding="20,0,0,0" Background="#66E8C56A" BorderBrush="#66E8C56A"/>
+                <Button x:Name="btn_Search_S" Click="btn_Search_S_Click" Content="Buscar" HorizontalContentAlignment="Left" Padding="20,0,0,0" Background="#66E8C56A" BorderBrush="#66E8C56A"/>
                 
                 <!--SUBMENU 2 ESTUDIANTES-->
                 <StackPanel x:Name="stp_SubM_Search_S" Visibility="Collapsed">
-                    <Button x:Name="btn_Search_G_S" Content="Por Grupo" HorizontalContentAlignment="Left" Padding="40,0,0,0" Background="#33E8C56A" Cursor="Hand" BorderBrush="#33E8C56A"/>
-                    <Button x:Name="btn_Search_U_S" Content="Por Nombre" HorizontalContentAlignment="Left" Padding="40,0,0,0" Background="#33E8C56A" BorderBrush="#33E8C56A" Cursor="Hand"/>
+                    <Button x:Name="btn_Search_G_S" Click="btn_Search_G_S_Click" Content="Por Grupo" HorizontalContentAlignment="Left" Padding="40,0,0,0" Background="#33E8C56A" Cursor="Hand" BorderBrush="#33E8C56A"/>
+                    <Button x:Name="btn_Search_U_S" Content="Por Nombre" Click="btn_Search_U_S_Click" HorizontalContentAlignment="Left" Padding="40,0,0,0" Background="#33E8C56A" BorderBrush="#33E8C56A" Cursor="Hand"/>
                 </StackPanel>
-                <Button x:Name="btn_Add_S" Content="Añadir" HorizontalContentAlignment="Left" Padding="20,0,0,0" Background="#66E8C56A" BorderBrush="#66E8C56A"/>
-                <Button x:Name="btn_Modify_S" Content="Modificar" HorizontalContentAlignment="Left" Padding="20,0,0,0" Background="#66E8C56A" BorderBrush="#66E8C56A"/>
-                <Button x:Name="btn_Delete_S" Content="Eliminar" HorizontalContentAlignment="Left" Padding="20,0,0,0" Background="#66E8C56A" BorderBrush="#66E8C56A"/>
+                <Button x:Name="btn_Add_S" Click="btn_Add_S_Click_1" Content="Añadir" HorizontalContentAlignment="Left" Padding="20,0,0,0" Background="#66E8C56A" BorderBrush="#66E8C56A"/>
+                <Button x:Name="btn_Modify_S" Content="Modificar" Click="btn_Modify_S_Click" HorizontalContentAlignment="Left" Padding="20,0,0,0" Background="#66E8C56A" BorderBrush="#66E8C56A"/>
+                <Button x:Name="btn_Delete_S" Content="Eliminar" Click="btn_Delete_S_Click" HorizontalContentAlignment="Left" Padding="20,0,0,0" Background="#66E8C56A" BorderBrush="#66E8C56A"/>
             </StackPanel>
 
 
             <!--BOTÓN PADRES-->
-            <Button x:Name="btn_Parents" HorizontalContentAlignment="Left" Background="#B2E8C56A" BorderBrush="#B2E8C56A">
+            <Button x:Name="btn_Parents" Click="btn_Parents_Click" HorizontalContentAlignment="Left" Background="#B2E8C56A" BorderBrush="#B2E8C56A">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="Images/Family.png" Width="30" Height="30" HorizontalAlignment="Left" Margin="-12,0,0,0" />
                     <TextBlock VerticalAlignment="Center" Margin="10,0,0,0">Padres</TextBlock>
@@ -90,30 +90,30 @@
             </Button>
             
             <!--SUBMENU PADRES-->
-            <StackPanel x:Name="stp_SubM_Parents" Visibility="Collapsed">
-                <Button x:Name="btn_Search_P" Content="Buscar" HorizontalContentAlignment="Left" Padding="20,0,0,0" Background="#66E8C56A" BorderBrush="#66E8C56A"/>
-                <Button x:Name="btn_Modify_P" Content="Modificar" HorizontalContentAlignment="Left" Padding="20,0,0,0" Background="#66E8C56A" BorderBrush="#66E8C56A"/>
-                <Button x:Name="btn_Delete_P" Content="Eliminar" HorizontalContentAlignment="Left" Padding="20,0,0,0" Background="#66E8C56A" BorderBrush="#66E8C56A"/>
+            <StackPanel x:Name="stp_SubM_Parents"  Visibility="Collapsed">
+                <Button x:Name="btn_Search_P" Click="btn_Search_P_Click" Content="Buscar" HorizontalContentAlignment="Left" Padding="20,0,0,0" Background="#66E8C56A" BorderBrush="#66E8C56A"/>
+                <Button x:Name="btn_Modify_P" Click="btn_Modify_P_Click" Content="Modificar" HorizontalContentAlignment="Left" Padding="20,0,0,0" Background="#66E8C56A" BorderBrush="#66E8C56A"/>
+                <Button x:Name="btn_Delete_P" Click="btn_Delete_P_Click" Content="Eliminar" HorizontalContentAlignment="Left" Padding="20,0,0,0" Background="#66E8C56A" BorderBrush="#66E8C56A"/>
             </StackPanel>
 
 
             <!--BOTÓN SCHOOL-->
-            <Button x:Name="btn_School" HorizontalContentAlignment="Left"  Background="#B2E8C56A" BorderBrush="#B2E8C56A">
+            <Button x:Name="btn_School" Click="btn_School_Click" HorizontalContentAlignment="Left"  Background="#B2E8C56A" BorderBrush="#B2E8C56A">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="Images/School.png" Width="25" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-8,0,0,0" />
                     <TextBlock VerticalAlignment="Center" Margin="10,0,0,0">Colegio</TextBlock>
                 </StackPanel>
             </Button>
             <StackPanel x:Name="stp_SubM1_Group" Visibility="Collapsed">
-                <Button x:Name="btn_Group" Content="Grupo" HorizontalContentAlignment="Left" Padding="20,0,0,0" Background="#66E8C56A" BorderBrush="#66E8C56A"/>
+                <Button x:Name="btn_Group" Click="btn_Group_Click" Content="Grupo" HorizontalContentAlignment="Left" Padding="20,0,0,0" Background="#66E8C56A" BorderBrush="#66E8C56A"/>
 
                 <!--SUBMENU Colegio-->
                 <StackPanel x:Name="stp_SubM2_Group" Visibility="Collapsed">
-                    <Button x:Name="btn_Create_G" Content="Crear Grupo" HorizontalContentAlignment="Left" Padding="40,0,0,0" Background="#33E8C56A" Cursor="Hand" BorderBrush="#33E8C56A"/>
-                    <Button x:Name="btn_Delete_G" Content="Eliminar Grupo" HorizontalContentAlignment="Left" Padding="40,0,0,0" Background="#33E8C56A" BorderBrush="#33E8C56A" Cursor="Hand"/>
-                    <Button x:Name="btn_Mod_G" Content="Modificar Grupo" HorizontalContentAlignment="Left" Padding="40,0,0,0" Background="#33E8C56A" BorderBrush="#33E8C56A" Cursor="Hand"/>
+                    <Button x:Name="btn_Create_G" Click="btn_Create_G_Click" Content="Crear Grupo" HorizontalContentAlignment="Left" Padding="40,0,0,0" Background="#33E8C56A" Cursor="Hand" BorderBrush="#33E8C56A"/>
+                    <Button x:Name="btn_Delete_G" Click="btn_Delete_G_Click" Content="Eliminar Grupo" HorizontalContentAlignment="Left" Padding="40,0,0,0" Background="#33E8C56A" BorderBrush="#33E8C56A" Cursor="Hand"/>
+                    <Button x:Name="btn_Mod_G" Click="btn_Mod_G_Click" Content="Modificar Grupo" HorizontalContentAlignment="Left" Padding="40,0,0,0" Background="#33E8C56A" BorderBrush="#33E8C56A" Cursor="Hand"/>
                 </StackPanel>
-                <Button x:Name="btn_Data_Sc" Content="Datos del Colegio" HorizontalContentAlignment="Left" Padding="20,0,0,0" Background="#66E8C56A" BorderBrush="#66E8C56A"/>
+                <Button x:Name="btn_Data_Sc" Click="btn_Data_Sc_Click" Content="Datos del Colegio" HorizontalContentAlignment="Left" Padding="20,0,0,0" Background="#66E8C56A" BorderBrush="#66E8C56A"/>
             </StackPanel>
         </StackPanel>
 
@@ -127,8 +127,9 @@
         <!--
         TITULO CON BINDING
         -->
-        <StackPanel x:Name="title2" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" Visibility="Collapsed">
-            <TextBlock Text="{Binding Path=Nick}" FontSize="120" HorizontalAlignment="Center" FontFamily="Bernard MT Condensed" FontWeight="Bold" Foreground="#FF289A8B"/>
+        <StackPanel x:Name="title2" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" Visibility="Collapsed" Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBlock Text="Hola, " FontSize="80" HorizontalAlignment="Center" FontFamily="Bernard MT Condensed" FontWeight="Bold" Foreground="#FFCC6649"/>
+            <TextBlock Text="{Binding Path=Name}" FontSize="80" HorizontalAlignment="Center" FontFamily="Bernard MT Condensed" FontWeight="Bold" Foreground="#FFCC6649"/>
         </StackPanel>
 
 

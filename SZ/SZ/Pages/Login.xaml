@@ -48,6 +48,9 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0" VerticalAlignment="Center" Visibility="Collapsed" x:Name="Change">
                 <Button x:Name="btn_Pass_Change" VerticalAlignment="Center" FontSize="20" Background="#FFCC6649" BorderBrush="#FFCC6649" Foreground="White" Height="50" Width="230" FontFamily="Bernard MT" Cursor="Hand">Cambiar Contraseña</Button>
             </StackPanel>
+            <StackPanel>
+                <TextBlock Text="Contraseña incorrecta" Margin="0,50,0,0" Visibility="Collapsed" x:Name="tb_wrong_pass" FontSize="32" HorizontalAlignment="Center" FontFamily="Bernard MT Condensed" FontWeight="Bold" Foreground="Red"/>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Page>

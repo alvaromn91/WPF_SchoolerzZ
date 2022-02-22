@@ -13,5 +13,8 @@
     <Page Update="Pages\Login.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\MainMenu.xaml">
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
 </Project>

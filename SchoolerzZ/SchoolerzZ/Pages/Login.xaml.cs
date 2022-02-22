@@ -100,7 +100,6 @@ namespace SchoolerzZ.Pages
                     App.Parent.title.Visibility = Visibility.Collapsed;
                     App.Parent.stp_GorilaMid.Visibility = Visibility.Collapsed;
                     App.Parent.stp_GorilaMenuLat.Visibility = Visibility.Visible;
-
                 }
                 else
                 {

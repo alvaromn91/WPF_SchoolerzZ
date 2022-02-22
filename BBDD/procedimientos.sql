@@ -389,3 +389,5 @@ BEGIN
     select m.sz_007_SN2 into pv_sn2 from sz_007_school_managers m where m.sz_007_Nick = pv_Nick;
 END
 // DELIMITER ;
+
+
