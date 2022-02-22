@@ -24,6 +24,8 @@
         <StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Center">
             <Button x:Name="btn_Teachers"  FontSize="20" Background="#FFCC6649" BorderBrush="#FFCC6649" Foreground="White" Margin="0,0,10,0" Height="50" Width="170" FontFamily="Bernard MT" Cursor="Hand" Content="Docentes"/>
             <Button x:Name="btn_T_Buscar" FontSize="16" Background="#FFCB765D" BorderBrush="#FFCB765D" Foreground="White" Margin="0,0,10,0" Height="30" Width="170" FontFamily="Bernard MT" Cursor="Hand" Content="Buscar"/>
+            <Button x:Name="btn_T_Add" FontSize="16" Background="#FFCB765D" BorderBrush="#FFCB765D" Foreground="White" Margin="0,0,10,0" Height="30" Width="170" FontFamily="Bernard MT" Cursor="Hand" Content="Añadir"/>
+            
         </StackPanel>
         <StackPanel  Grid.Row="1" Grid.Column="0" VerticalAlignment="Center">
                 <Button x:Name="btn_Parents" FontSize="20" Background="#FFCC6649" BorderBrush="#FFCC6649" Foreground="White" Margin="0,0,10,0" Height="50" Width="170" FontFamily="Bernard MT" Cursor="Hand" Content="Padre/Madre"/>

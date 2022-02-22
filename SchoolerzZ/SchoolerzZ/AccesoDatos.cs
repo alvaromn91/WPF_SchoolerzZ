@@ -138,9 +138,9 @@ namespace SchoolerzZ
             EstablecerConexion();
 
             cmd.ExecuteNonQuery();
-            lista.Add((string)cmd.Parameters["pv_name"].Value);
-            lista.Add((string)cmd.Parameters["pv_sn1"].Value);
-            lista.Add((string)cmd.Parameters["pv_sn2"].Value);
+            lista.Add(cmd.Parameters["pv_name"].Value.ToString());
+            lista.Add(cmd.Parameters["pv_sn1"].Value.ToString());
+            lista.Add(cmd.Parameters["pv_sn2"].Value.ToString());
 
             CerrarConexion();
             return lista;

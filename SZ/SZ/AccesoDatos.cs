@@ -12,7 +12,7 @@ namespace SZ
 {
     public class AccesoDatos
     {
-        string connectionString = "datasource=localhost;port=3306;username=root;password=1234;database=schoolerzz;";
+        string connectionString = "datasource=localhost;port=3306;username=root;password=7101991a;database=schoolerzz;";
         MySqlConnection databaseConnection;
 
         public AccesoDatos()
