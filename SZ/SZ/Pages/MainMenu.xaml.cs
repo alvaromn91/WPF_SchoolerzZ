@@ -20,7 +20,6 @@ namespace SchoolerzZ.Pages
     /// </summary>
     public partial class MainMenu : Page
     {
-        int a = 0;
         public MainMenu()
         {
             InitializeComponent();
@@ -28,70 +27,34 @@ namespace SchoolerzZ.Pages
 
         private void btn_Student_Click(object sender, RoutedEventArgs e)
         {
-            if (a == 0)
-            {
-                Sub_Students.Visibility = Visibility.Visible;
-                Sub_Teachers.Visibility = Visibility.Collapsed;
-                Sub_School.Visibility = Visibility.Collapsed;
-                Sub_Parents.Visibility = Visibility.Collapsed;
-                a = 1;
-            }
-            else
-            {
-                Sub_Students.Visibility = Visibility.Collapsed;
-                a = 0;
-            }
+            Sub_Students.Visibility = Visibility.Visible;
+            Sub_Teachers.Visibility = Visibility.Collapsed;
+            Sub_School.Visibility = Visibility.Collapsed;
+            Sub_Parents.Visibility = Visibility.Collapsed;
         }
 
         private void btn_Teachers_Click(object sender, RoutedEventArgs e)
         {
-            if (a == 0)
-            {
-                Sub_Teachers.Visibility = Visibility.Visible;
-                Sub_Students.Visibility = Visibility.Collapsed;
-                Sub_School.Visibility = Visibility.Collapsed;
-                Sub_Parents.Visibility = Visibility.Collapsed;
-                a = 1;
-            }
-            else
-            {
-                Sub_Teachers.Visibility = Visibility.Collapsed;
-                a = 0;
-            }
+            Sub_Teachers.Visibility = Visibility.Visible;
+            Sub_Students.Visibility = Visibility.Collapsed;
+            Sub_School.Visibility = Visibility.Collapsed;
+            Sub_Parents.Visibility = Visibility.Collapsed;
         }
 
         private void btn_Parents_Click(object sender, RoutedEventArgs e)
         {
-            if (a == 0)
-            {
-                Sub_Parents.Visibility = Visibility.Visible;
-                Sub_Students.Visibility = Visibility.Collapsed;
-                Sub_School.Visibility = Visibility.Collapsed;
-                Sub_Teachers.Visibility = Visibility.Collapsed;
-                a = 1;
-            }
-            else
-            {
-                Sub_Parents.Visibility = Visibility.Collapsed;
-                a = 0;
-            }
+            Sub_Parents.Visibility = Visibility.Visible;
+            Sub_Students.Visibility = Visibility.Collapsed;
+            Sub_School.Visibility = Visibility.Collapsed;
+            Sub_Teachers.Visibility = Visibility.Collapsed;
         }
 
         private void btn_School_Click(object sender, RoutedEventArgs e)
         {
-            if (a == 0)
-            {
-                Sub_School.Visibility = Visibility.Visible;
-                Sub_Parents.Visibility = Visibility.Collapsed;
-                Sub_Students.Visibility = Visibility.Collapsed;
-                Sub_Teachers.Visibility = Visibility.Collapsed;
-                a = 1;
-            }
-            else
-            {
-                Sub_School.Visibility = Visibility.Collapsed;
-                a = 0;
-            }
+            Sub_School.Visibility = Visibility.Visible;
+            Sub_Parents.Visibility = Visibility.Collapsed;
+            Sub_Students.Visibility = Visibility.Collapsed;
+            Sub_Teachers.Visibility = Visibility.Collapsed;
         }
     }
 }
