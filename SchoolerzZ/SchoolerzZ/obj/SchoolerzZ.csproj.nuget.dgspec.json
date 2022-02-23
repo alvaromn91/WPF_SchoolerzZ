@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuario\\OneDrive\\Escritorio\\SchoolerzZ\\WPF_SchoolerzZ\\SchoolerzZ\\SchoolerzZ\\SchoolerzZ.csproj": {}
+    "C:\\Users\\jrobl\\OneDrive\\Escritorio\\GIT\\WPF_SchoolerzZ\\SchoolerzZ\\SchoolerzZ\\SchoolerzZ.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\OneDrive\\Escritorio\\SchoolerzZ\\WPF_SchoolerzZ\\SchoolerzZ\\SchoolerzZ\\SchoolerzZ.csproj": {
+    "C:\\Users\\jrobl\\OneDrive\\Escritorio\\GIT\\WPF_SchoolerzZ\\SchoolerzZ\\SchoolerzZ\\SchoolerzZ.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\SchoolerzZ\\WPF_SchoolerzZ\\SchoolerzZ\\SchoolerzZ\\SchoolerzZ.csproj",
+        "projectUniqueName": "C:\\Users\\jrobl\\OneDrive\\Escritorio\\GIT\\WPF_SchoolerzZ\\SchoolerzZ\\SchoolerzZ\\SchoolerzZ.csproj",
         "projectName": "SchoolerzZ",
-        "projectPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\SchoolerzZ\\WPF_SchoolerzZ\\SchoolerzZ\\SchoolerzZ\\SchoolerzZ.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\SchoolerzZ\\WPF_SchoolerzZ\\SchoolerzZ\\SchoolerzZ\\obj\\",
+        "projectPath": "C:\\Users\\jrobl\\OneDrive\\Escritorio\\GIT\\WPF_SchoolerzZ\\SchoolerzZ\\SchoolerzZ\\SchoolerzZ.csproj",
+        "packagesPath": "C:\\Users\\jrobl\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jrobl\\OneDrive\\Escritorio\\GIT\\WPF_SchoolerzZ\\SchoolerzZ\\SchoolerzZ\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jrobl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

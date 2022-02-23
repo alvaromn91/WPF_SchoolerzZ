@@ -29,11 +29,11 @@ namespace SchoolerzZ
         {
             InitializeComponent();
             mostrarPaginaInicio();
-            if (App.login.cmb_Type.SelectedIndex == 3) //3 porque es lo que devuelve el ComboBox cuando esta seleccionado el SchoolManager
-            { 
-                manager = new SchoolManager(App.login.tb_User.Text.ToString()); 
-                // A partir de aquí pasar al datacontext
-            }
+            //if (App.login.cmb_Type.SelectedIndex == 3) //3 porque es lo que devuelve el ComboBox cuando esta seleccionado el SchoolManager
+            //{ 
+            //    manager = new SchoolManager(App.login.tb_User.Text.ToString()); 
+            //    // A partir de aquí pasar al datacontext
+            //}
         }
         public void mostrarPaginaInicio()
         {
