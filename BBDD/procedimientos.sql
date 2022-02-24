@@ -109,7 +109,7 @@ begin
 		if pt_Photo_Internal_Route not like '' then
 			update sz_002_students set SZ_002_Photo_Internal_Route = pt_Photo_Internal_Route where SZ_002_Id = vb_id;
 		end if;
-		call CreateNick('S', vv_school_name, vb_id, @r_nick);
+		call pa_CreateNick('S', vv_school_name, vb_id, @r_nick);
 		UPDATE sz_002_students SET SZ_002_Nick = (select @r_nick) WHERE SZ_002_Id = vb_id;
         UPDATE sz_015_School_Licences SET sz_015_quantity = sz_015_quantity - 1 where sz_015_school_id = (SELECT sz_007_schools_id from sz_007_school_managers where SZ_007_Nick like pv_School_Manager_Nick);
 		set pi_r = 0;
@@ -177,7 +177,7 @@ begin
 		if pv_Phone2 not like '' then
 			update sz_008_teachers set sz_008_Phone2 = pv_Phone2 where SZ_008_Id = vb_id;
 		end if;
-		call CreateNick('T', vv_school_name, vb_id, @r_nick);
+		call pa_CreateNick('T', vv_school_name, vb_id, @r_nick);
 		-- set vv_nick = (select @r_nick);
 		UPDATE sz_008_teachers SET SZ_008_Nick = (select @r_nick) WHERE SZ_008_Id = vb_id; 
         UPDATE sz_016_t_Licences SET sz_016_usage = sz_016_usage - 1 where sz_016_school_id = (SELECT sz_007_schools_id from sz_007_school_managers where SZ_007_Nick like pv_School_Manager_Nick);
@@ -257,7 +257,7 @@ begin
     if pv_Phone2 not like '' then
 		update sz_003_parents set SZ_003_Phone2 = pv_Phone2 where SZ_003_Id = vb_id;
     end if;
-    call CreateNick('P', vv_school_name, vb_id, @r_nick);
+    call pa_CreateNick('P', vv_school_name, vb_id, @r_nick);
     set vv_nick = (select @r_nick);
     UPDATE sz_003_parents SET SZ_003_Nick = vv_nick WHERE SZ_003_Id = vb_id; 
     set pi_r = 0;
