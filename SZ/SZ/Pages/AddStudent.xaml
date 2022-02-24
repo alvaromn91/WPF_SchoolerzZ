@@ -31,17 +31,46 @@
             <Label Content="Registro de Estudiante" FontSize="50" FontFamily="Bernard MT Condensed"/>
         </StackPanel>
         <WrapPanel Grid.Row="1" Grid.Column="0" >
-            <TextBox x:Name="tb_Name" FontSize="32" Width="280" materialDesign:HintAssist.Hint="Nombre" FontFamily="Bernard MT Condensed" Margin="30"/>
-            <TextBox x:Name="tb_Surname1" FontSize="32" Width="280" materialDesign:HintAssist.Hint="Apellido 1" FontFamily="Bernard MT Condensed" Margin="30"/>
-            <TextBox x:Name="tb_Surname2" FontSize="32" Width="280" materialDesign:HintAssist.Hint="Apellido 2" FontFamily="Bernard MT Condensed" Margin="30"/>
-
-            <TextBox x:Name="tb_Nationality" FontSize="32" Width="280" materialDesign:HintAssist.Hint="Nacionalidad" FontFamily="Bernard MT Condensed" Margin="30"/>
-            <TextBox x:Name="tb_Country" FontSize="32" Width="280" materialDesign:HintAssist.Hint="País" FontFamily="Bernard MT Condensed" Margin="30"/>
-            <TextBox x:Name="tb_City" FontSize="32" Width="280" materialDesign:HintAssist.Hint="Ciudad" FontFamily="Bernard MT Condensed" Margin="30"/>
-            <TextBox x:Name="tb_PostalCode" FontSize="32" Width="280" materialDesign:HintAssist.Hint="Código Postal" FontFamily="Bernard MT Condensed" Margin="30"/>
-            <TextBox x:Name="tb_Address" FontSize="32" Width="280" materialDesign:HintAssist.Hint="Dirección" FontFamily="Bernard MT Condensed" Margin="30"/>
-            <TextBox x:Name="tb_Email" FontSize="32" Width="280" materialDesign:HintAssist.Hint="Email" FontFamily="Bernard MT Condensed" Margin="30"/>
-            <PasswordBox x:Name="tb_Password" FontSize="32" Width="280" materialDesign:HintAssist.Hint="Contraseña" Cursor="IBeam" FontFamily="Bernard MT Condensed" Margin="30"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10" VerticalAlignment="Center" >
+                <TextBox x:Name="tb_Name" FontSize="32" Width="280" materialDesign:HintAssist.Hint="Nombre" FontFamily="Bernard MT Condensed" Margin="30"/>
+                <TextBlock Text="*" Name="req_name" VerticalAlignment="Top" FontSize="12" materialDesign:HintAssist.Hint="Usuario" FontFamily="Bernard MT Condensed" Visibility="Hidden"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10" VerticalAlignment="Center" >
+                <TextBox x:Name="tb_Surname1" FontSize="32" Width="280" materialDesign:HintAssist.Hint="Apellido 1" FontFamily="Bernard MT Condensed" Margin="30"/>
+                <TextBlock Text="*" Name="req_sn1" VerticalAlignment="Top" FontSize="12" materialDesign:HintAssist.Hint="Usuario" FontFamily="Bernard MT Condensed" Visibility="Hidden"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10" VerticalAlignment="Center" >
+                <TextBox x:Name="tb_Surname2" FontSize="32" Width="280" materialDesign:HintAssist.Hint="Apellido 2" FontFamily="Bernard MT Condensed" Margin="30"/>
+                <TextBlock Text="*" Name="req_sn2" VerticalAlignment="Top" FontSize="12" materialDesign:HintAssist.Hint="Usuario" FontFamily="Bernard MT Condensed" Visibility="Hidden"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10" VerticalAlignment="Center" >
+                <TextBox x:Name="tb_Nationality" FontSize="32" Width="280" materialDesign:HintAssist.Hint="Nacionalidad" FontFamily="Bernard MT Condensed" Margin="30"/>
+                <TextBlock Text="*" Name="req_nat" VerticalAlignment="Top" FontSize="12" materialDesign:HintAssist.Hint="Usuario" FontFamily="Bernard MT Condensed" Visibility="Hidden"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10" VerticalAlignment="Center" >
+                <TextBox x:Name="tb_Country" FontSize="32" Width="280" materialDesign:HintAssist.Hint="País" FontFamily="Bernard MT Condensed" Margin="30"/>
+                <TextBlock Text="*" Name="req_cou" VerticalAlignment="Top" FontSize="12" materialDesign:HintAssist.Hint="Usuario" FontFamily="Bernard MT Condensed" Visibility="Hidden"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10" VerticalAlignment="Center" >
+                <TextBox x:Name="tb_City" FontSize="32" Width="280" materialDesign:HintAssist.Hint="Ciudad" FontFamily="Bernard MT Condensed" Margin="30"/>
+                <TextBlock Text="*" Name="req_cit" VerticalAlignment="Top" FontSize="12" materialDesign:HintAssist.Hint="Usuario" FontFamily="Bernard MT Condensed" Visibility="Hidden"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10" VerticalAlignment="Center" >
+                <TextBox x:Name="tb_PostalCode" FontSize="32" Width="280" materialDesign:HintAssist.Hint="Código Postal" FontFamily="Bernard MT Condensed" Margin="30"/>
+                <TextBlock Text="*" Name="req_pos" VerticalAlignment="Top" FontSize="12" materialDesign:HintAssist.Hint="Usuario" FontFamily="Bernard MT Condensed" Visibility="Hidden"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10" VerticalAlignment="Center" >
+                <TextBox x:Name="tb_Address" FontSize="32" Width="280" materialDesign:HintAssist.Hint="Dirección" FontFamily="Bernard MT Condensed" Margin="30"/>
+                <TextBlock Text="*" Name="req_add" VerticalAlignment="Top" FontSize="12" materialDesign:HintAssist.Hint="Usuario" FontFamily="Bernard MT Condensed" Visibility="Hidden"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10" VerticalAlignment="Center" >
+                <TextBox x:Name="tb_Email" FontSize="32" Width="280" materialDesign:HintAssist.Hint="Email" FontFamily="Bernard MT Condensed" Margin="30"/>
+                <TextBlock Text="*" Name="req_ema" VerticalAlignment="Top" FontSize="12" materialDesign:HintAssist.Hint="Usuario" FontFamily="Bernard MT Condensed" Visibility="Hidden"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10" VerticalAlignment="Center" >
+                <PasswordBox x:Name="tb_Password" FontSize="32" Width="280" materialDesign:HintAssist.Hint="Contraseña" Cursor="IBeam" FontFamily="Bernard MT Condensed" Margin="30"/>
+                <TextBlock Text="*" Name="req_pas" VerticalAlignment="Top" FontSize="12" materialDesign:HintAssist.Hint="Usuario" FontFamily="Bernard MT Condensed" Visibility="Hidden"/>
+            </StackPanel>
             <TextBox x:Name="tb_Medical" FontSize="24" Width="280" materialDesign:HintAssist.Hint="Observaciones Médicas" FontFamily="Bernard MT Condensed" Margin="30" ScrollViewer.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" MaxHeight="172"/>
             <TextBox x:Name="tb_Observations" FontSize="24" Width="280" materialDesign:HintAssist.Hint="Observaciones" FontFamily="Bernard MT Condensed" Margin="30" ScrollViewer.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" MaxHeight="172"/>
         </WrapPanel>
@@ -49,8 +78,9 @@
             <Image Source="/Images/mojo.png" x:Name="img_Photo" Height="150"/>
             <Button x:Name="btn_Image" VerticalAlignment="Center" FontSize="20" Background="#FFCC6649" BorderBrush="#FFCC6649" Foreground="White" Margin="30" Height="50" Width="170" FontFamily="Bernard MT" Cursor="Hand" Click="btn_Image_Click">Agregar Imagen</Button>
         </StackPanel>
+        <TextBlock Text="*" Name="req_cal" VerticalAlignment="Bottom" FontSize="12" Grid.Column="2" Grid.Row="0" materialDesign:HintAssist.Hint="Usuario" FontFamily="Bernard MT Condensed" Visibility="Collapsed"/>
         <StackPanel Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,10,0">
-            <Label Content="Fecha de Nacimiento" FontSize="32" FontFamily="Bernard MT Condensed"/>
+            
             <Calendar RenderTransformOrigin="0.1,0.1" x:Name="cal_Birth">
                 <Calendar.RenderTransform>
                     <TransformGroup>
@@ -61,6 +91,9 @@
                     </TransformGroup>
                 </Calendar.RenderTransform>
             </Calendar>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="0">
+            <TextBlock Text="Faltan Datos" Margin="0,50,0,0" Visibility="Collapsed" x:Name="tb_forget" FontSize="32" HorizontalAlignment="Center" FontFamily="Bernard MT Condensed" FontWeight="Bold" Foreground="Red"/>
         </StackPanel>
 
         <Button x:Name="btn_SignUp" Click="btn_SignUp_Click"  HorizontalAlignment="Center" Margin="10" VerticalAlignment="Top" FontSize="20"  Background="#FFCC6649" BorderBrush="#FFCC6649" Foreground="White" Height="50" Width="170" FontFamily="Bernard MT" Cursor="Hand" Grid.Column="2" Grid.Row="2">Registrar</Button>

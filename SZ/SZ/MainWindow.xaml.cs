@@ -79,7 +79,7 @@ namespace SZ
 
         private void btn_Add_S_Click(object sender, RoutedEventArgs e)
         {
-            //fra_Log.NavigationService.Navigate(student);
+            parent.NavigationService.Navigate(new AddStudent());
             title.Visibility = Visibility.Collapsed;
         }
 

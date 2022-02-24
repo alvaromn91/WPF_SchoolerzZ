@@ -56,5 +56,10 @@ namespace SZ.Pages
             Sub_Students.Visibility = Visibility.Collapsed;
             Sub_Teachers.Visibility = Visibility.Collapsed;
         }
+
+        private void btn_S_Add_Click(object sender, RoutedEventArgs e)
+        {
+            App.Parent.parent.NavigationService.Navigate(new AddStudent());
+        }
     }
 }

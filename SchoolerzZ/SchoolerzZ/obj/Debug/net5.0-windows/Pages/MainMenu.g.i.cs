@@ -9,6 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using SchoolerzZ;
 using SchoolerzZ.Pages;
 using System;
 using System.Diagnostics;
@@ -53,7 +54,7 @@ namespace SchoolerzZ.Pages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/SchoolerzZ;component/pages/mainmenu.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/SchoolerzZ;V1.0.0.0;component/pages/mainmenu.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Pages\MainMenu.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -24,7 +24,7 @@
             <Button x:Name="btn_Student" FontSize="20" Background="#FFCC6649" BorderBrush="#FFCC6649" Foreground="White" Margin="0,0,10,0" Height="50" Width="170" FontFamily="Bernard MT" Cursor="Hand"  Content="Estudiantes" Click="btn_Student_Click"/>
             <StackPanel x:Name="Sub_Students" Visibility="Collapsed">
                 <Button x:Name="btn_S_Buscar" FontSize="16" Background="#FFCB765D" BorderBrush="#FFCB765D" Foreground="White" Margin="0,0,10,0" Height="30" Width="170" FontFamily="Bernard MT" Cursor="Hand" Content="Buscar"/>
-                <Button x:Name="btn_S_Add" FontSize="16" Background="#FFCB765D" BorderBrush="#FFCB765D" Foreground="White" Margin="0,0,10,0" Height="30" Width="170" FontFamily="Bernard MT" Cursor="Hand" Content="Añadir"/>
+                <Button x:Name="btn_S_Add" Click="btn_S_Add_Click" FontSize="16" Background="#FFCB765D" BorderBrush="#FFCB765D" Foreground="White" Margin="0,0,10,0" Height="30" Width="170" FontFamily="Bernard MT" Cursor="Hand" Content="Añadir"/>
                 <Button x:Name="btn_S_Modify" FontSize="16" Background="#FFCB765D" BorderBrush="#FFCB765D" Foreground="White" Margin="0,0,10,0" Height="30" Width="170" FontFamily="Bernard MT" Cursor="Hand" Content="Modificar"/>
                 <Button x:Name="btn_S_Delete" FontSize="16" Background="#FFCB765D" BorderBrush="#FFCB765D" Foreground="White" Margin="0,0,10,0" Height="30" Width="170" FontFamily="Bernard MT" Cursor="Hand" Content="Eliminar"/>
             </StackPanel>

@@ -78,7 +78,7 @@
                     <Button x:Name="btn_Search_G_S" Click="btn_Search_G_S_Click" Content="Por Grupo" HorizontalContentAlignment="Left" Padding="40,0,0,0" Background="#33E8C56A" Cursor="Hand" BorderBrush="#33E8C56A"/>
                     <Button x:Name="btn_Search_U_S" Content="Por Nombre" Click="btn_Search_U_S_Click" HorizontalContentAlignment="Left" Padding="40,0,0,0" Background="#33E8C56A" BorderBrush="#33E8C56A" Cursor="Hand"/>
                 </StackPanel>
-                <Button x:Name="btn_Add_S" Click="btn_Add_S_Click_1" Content="Añadir" HorizontalContentAlignment="Left" Padding="20,0,0,0" Background="#66E8C56A" BorderBrush="#66E8C56A"/>
+                <Button x:Name="btn_Add_S" Click="btn_Add_S_Click" Content="Añadir" HorizontalContentAlignment="Left" Padding="20,0,0,0" Background="#66E8C56A" BorderBrush="#66E8C56A"/>
                 <Button x:Name="btn_Modify_S" Content="Modificar" Click="btn_Modify_S_Click" HorizontalContentAlignment="Left" Padding="20,0,0,0" Background="#66E8C56A" BorderBrush="#66E8C56A"/>
                 <Button x:Name="btn_Delete_S" Content="Eliminar" Click="btn_Delete_S_Click" HorizontalContentAlignment="Left" Padding="20,0,0,0" Background="#66E8C56A" BorderBrush="#66E8C56A"/>
             </StackPanel>

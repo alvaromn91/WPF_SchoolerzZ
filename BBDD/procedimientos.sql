@@ -474,4 +474,3 @@ BEGIN
 	select * from sz_008_teachers where sz_008_Name = pv_Name and sz_008_SN1 = pv_SN1 and sz_008_SN2 = pv_SN2; 
 END
 // DELIMITER ;
-

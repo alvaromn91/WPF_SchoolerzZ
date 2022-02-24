@@ -74,6 +74,7 @@ namespace SZ.Pages
                 {
                     tb_wrong_pass.Visibility = Visibility.Collapsed;
                     bind = rol + tb_User.Text.ToString();
+                    App.nick = bind;
                     App.Parent.DataContext = new SchoolManager(bind);
                     App.Parent.stp_MenuLat.Visibility = Visibility.Visible;
                     App.Parent.parent.Navigate(new MainMenu());

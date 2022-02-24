@@ -244,3 +244,5 @@ C:\Users\admin-dam2b\Desktop\GIT\WPF_SchoolerzZ\SZ\SZ\obj\Debug\net5.0-windows\S
 C:\Users\admin-dam2b\Desktop\GIT\WPF_SchoolerzZ\SZ\SZ\obj\Debug\net5.0-windows\SZ.csproj.CopyComplete
 C:\Users\admin-dam2b\Desktop\GIT\WPF_SchoolerzZ\SZ\SZ\obj\Debug\net5.0-windows\SZ.genruntimeconfig.cache
 C:\Users\admin-dam2b\Desktop\Projects\WPF_SchoolerzZ\SZ\SZ\obj\Debug\net5.0-windows\Pages\AddStudent.g.cs
+C:\Users\admin-dam2b\Desktop\Projects\WPF_SchoolerzZ\SZ\SZ\obj\Debug\net5.0-windows\Pages\AddStudent.baml
+C:\Users\admin-dam2b\Desktop\Projects\WPF_SchoolerzZ\SZ\SZ\obj\Debug\net5.0-windows\Blink.baml
