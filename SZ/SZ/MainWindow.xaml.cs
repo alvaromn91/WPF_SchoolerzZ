@@ -23,6 +23,7 @@ namespace SZ
     /// </summary>
     public partial class MainWindow : Window
     {
+
         Login login = new Login();   
         public MainWindow()
         {
@@ -33,8 +34,6 @@ namespace SZ
         {
             App.Parent = this;
             this.parent.Navigate(login);
-            
-            
         }
         private void btn_Students_Click(object sender, RoutedEventArgs e)
         {
@@ -173,6 +172,21 @@ namespace SZ
         }
 
         private void btn_Data_Sc_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_Mod_Teachers_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_Del_Teachers_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_Search_Teachers_Click(object sender, RoutedEventArgs e)
         {
 
         }

@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SchoolerzZ.Pages
+namespace SZ.Pages
 {
     /// <summary>
     /// Lógica de interacción para MainMenu.xaml

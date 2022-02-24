@@ -14,5 +14,6 @@ namespace SZ
     public partial class App : Application
     {
         public static MainWindow Parent;
+        public static string nick;
     }
 }

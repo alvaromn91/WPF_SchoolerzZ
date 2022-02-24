@@ -54,9 +54,12 @@
             
             <!--SUBMENU 1 PROFESORES-->
             <StackPanel x:Name="stp_SubM_Teachers" Visibility="Collapsed">
-                <Button x:Name="btn_Add_Teachers" Click="btn_Add_Teachers_Click" Content="Añadir Profesor" HorizontalContentAlignment="Left" Padding="20,0,0,0" Background="#66E8C56A" BorderBrush="#66E8C56A"/>
+                <Button x:Name="btn_Search_Teachers" Click="btn_Search_Teachers_Click" Content="Buscar" HorizontalContentAlignment="Left" Padding="20,0,0,0" Background="#66E8C56A" BorderBrush="#66E8C56A"/>
+                <Button x:Name="btn_Add_Teachers" Click="btn_Add_Teachers_Click" Content="Añadir" HorizontalContentAlignment="Left" Padding="20,0,0,0" Background="#66E8C56A" BorderBrush="#66E8C56A"/>
+                <Button x:Name="btn_Mod_Teachers" Click="btn_Mod_Teachers_Click" Content="Modificar" HorizontalContentAlignment="Left" Padding="20,0,0,0" Background="#66E8C56A" BorderBrush="#66E8C56A"/>
+                <Button x:Name="btn_Del_Teachers" Click="btn_Del_Teachers_Click" Content="Borrar" HorizontalContentAlignment="Left" Padding="20,0,0,0" Background="#66E8C56A" BorderBrush="#66E8C56A"/>
             </StackPanel>
-
+            
 
             <!--BOTÓN ESTUDIANTES-->
             <Button x:Name="btn_Students" Click="btn_Students_Click" HorizontalContentAlignment="Left"  Background="#B2E8C56A" BorderBrush="#B2E8C56A" VerticalAlignment="Center">

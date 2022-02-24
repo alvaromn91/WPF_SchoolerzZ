@@ -39,7 +39,7 @@ namespace SZ
         public int Login(char pc_Char, string pv_Nick, string pv_Password)
         {
 
-            MySqlCommand cmd = new MySqlCommand("LoginAJ", databaseConnection);
+            MySqlCommand cmd = new MySqlCommand("pa_LoginAJ", databaseConnection);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add(new MySqlParameter("pc_char", pc_Char));
             cmd.Parameters.Add(new MySqlParameter("pv_username", pv_Nick));
@@ -58,12 +58,12 @@ namespace SZ
 
             return s;
         }
-        public List<string> GetManager(string Manager)
+        public List<string> GetManager(string manager)
         {
             List<string> lista = new List<string>();
-            MySqlCommand cmd = new MySqlCommand("GetManager", databaseConnection);
+            MySqlCommand cmd = new MySqlCommand("pa_GetManager", databaseConnection);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add(new MySqlParameter("pv_Nick", Manager));
+            cmd.Parameters.Add(new MySqlParameter("pv_Nick", ));
             cmd.Parameters.Add(new MySqlParameter("pv_name", MySqlDbType.VarChar));
             cmd.Parameters.Add(new MySqlParameter("pv_sn1", MySqlDbType.VarChar));
             cmd.Parameters.Add(new MySqlParameter("pv_sn2", MySqlDbType.VarChar));
@@ -80,6 +80,54 @@ namespace SZ
             CerrarConexion();
             return lista;
 
+        }
+        public int AddStudent(string manager, string name, string surname1, string surname2, DateTime birth, string nationality, string country, string city, string postalCode, string address, string email, string password, string medical, string observations, string photoRoute)
+        {
+            MySqlCommand cmd = new MySqlCommand("AddStudent", databaseConnection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new MySqlParameter("pv_School_Manager_Nick", manager)); 
+            cmd.Parameters.Add(new MySqlParameter("pv_Name", name));
+            cmd.Parameters.Add(new MySqlParameter("pv_SN1", surname1));
+            cmd.Parameters.Add(new MySqlParameter("pv_SN2", surname2));
+            cmd.Parameters.Add(new MySqlParameter("pdt_Birth", birth));
+            cmd.Parameters.Add(new MySqlParameter("pv_Nationality", nationality));
+            cmd.Parameters.Add(new MySqlParameter("pv_Country", country));
+            cmd.Parameters.Add(new MySqlParameter("pv_city", city));
+            cmd.Parameters.Add(new MySqlParameter("pv_PostalCode", postalCode));
+            cmd.Parameters.Add(new MySqlParameter("pv_Adrress", address));
+            cmd.Parameters.Add(new MySqlParameter("pv_Email", email));
+            cmd.Parameters.Add(new MySqlParameter("pv_Password", password));
+            cmd.Parameters.Add(new MySqlParameter("pv_Medical", medical));
+            cmd.Parameters.Add(new MySqlParameter("pv_Observations", observations));
+            cmd.Parameters.Add(new MySqlParameter("pv_Photo_Internal_Route", photoRoute));
+            cmd.Parameters.Add(new MySqlParameter("pv_Licence", "")); //Licencia
+
+            cmd.Parameters.Add(new MySqlParameter("pi_r", MySqlDbType.Int32));
+            cmd.Parameters["pi_r"].Direction = ParameterDirection.Output;
+
+            EstablecerConexion();
+
+            cmd.ExecuteNonQuery();
+            int s = (int)cmd.Parameters["pi_r"].Value;
+
+            CerrarConexion();
+            return s;
+        }
+        public string GetLicence(string manager)
+        {
+            MySqlCommand cmd = new MySqlCommand("GetLicence", databaseConnection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new MySqlParameter("pv_School_Manager_Nick", manager)); // AÑADIR SCHOOL MANAGER
+            cmd.Parameters.Add(new MySqlParameter("pv_Licence", MySqlDbType.VarChar));
+            cmd.Parameters["pv_Licence"].Direction = ParameterDirection.Output;
+
+            EstablecerConexion();
+
+            cmd.ExecuteNonQuery();
+            string s = (string)cmd.Parameters["pv_Licence"].Value;
+
+            CerrarConexion();
+            return s;
         }
     }    
 }

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SZ;
 
-namespace SchoolerzZ
+namespace SZ
 {
 
     class SchoolManager

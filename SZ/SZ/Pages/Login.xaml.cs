@@ -1,5 +1,5 @@
-﻿using SchoolerzZ;
-using SchoolerzZ.Pages;
+﻿using SZ;
+using SZ.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -73,7 +73,6 @@ namespace SZ.Pages
                 if (r == 0)
                 {
                     tb_wrong_pass.Visibility = Visibility.Collapsed;
-                    
                     bind = rol + tb_User.Text.ToString();
                     App.Parent.DataContext = new SchoolManager(bind);
                     App.Parent.stp_MenuLat.Visibility = Visibility.Visible;
@@ -82,7 +81,7 @@ namespace SZ.Pages
                     App.Parent.title2.Visibility = Visibility.Visible;
                     App.Parent.stp_GorilaMid.Visibility = Visibility.Collapsed;
                     App.Parent.stp_GorilaMenuLat.Visibility = Visibility.Visible;
-                    
+                    App.nick = bind;
                     
                 }
                 else
