@@ -1,4 +1,4 @@
-drop PROCEDURE if exists CreateNick;
+drop PROCEDURE if exists pa_CreateNick;
 
 -- CreateNick: Crea un Nick único para un usuario
 --     Parámetros Entrada
@@ -9,7 +9,7 @@ drop PROCEDURE if exists CreateNick;
 --         pv_nick: el nick que quieres crear varchar(15);
 
 DELIMITER //
-create procedure CreateNick(in pv_user_type varchar(1),
+create procedure pa_CreateNick(in pv_user_type varchar(1),
 							in pv_school varchar(50),
                             in pi_id BINARY(16),
                             out pv_nick varchar(15))
@@ -43,10 +43,10 @@ begin
 end;
 // DELIMITER ;
 
-drop PROCEDURE if exists AddStudent;
+drop PROCEDURE if exists pa_AddStudent;
 
 DELIMITER //
-create procedure AddStudent(in pv_School_Manager_Nick varchar(50),
+create procedure pa_AddStudent(in pv_School_Manager_Nick varchar(50),
                             in pv_Name varchar(50),
 							in pv_SN1 varchar(100),
 							in pv_SN2 varchar(100),
@@ -119,10 +119,10 @@ begin
 end;
 // DELIMITER ;
 
-drop PROCEDURE if exists AddTeacher;
+drop PROCEDURE if exists pa_AddTeacher;
 
 DELIMITER //
-create procedure AddTeacher(in pv_School_Manager_Nick varchar(50),
+create procedure pa_AddTeacher(in pv_School_Manager_Nick varchar(50),
                             in pv_Name varchar(50),
 							in pv_SN1 varchar(100),
 							in pv_SN2 varchar(100),
@@ -188,10 +188,10 @@ begin
 end;
 // DELIMITER ;
 
-drop PROCEDURE if exists AddParent;
+drop PROCEDURE if exists pa_AddParent;
 
 DELIMITER //
-create procedure AddParent(in pv_School_Manager_Nick varchar(50),
+create procedure pa_AddParent(in pv_School_Manager_Nick varchar(50),
                            in pv_Name varchar(50),
                            in pv_SN1 varchar(100),
                            in pv_SN2 varchar(100),
@@ -265,9 +265,9 @@ end;
 // DELIMITER ;
 
 
-DROP PROCEDURE IF EXISTS InsertLicenses;
+DROP PROCEDURE IF EXISTS pa_InsertLicenses;
 DELIMITER //
-CREATE PROCEDURE InsertLicenses(in pi_n_lic int,
+CREATE PROCEDURE pa_InsertLicenses(in pi_n_lic int,
 								IN pv_school_manager varchar(15))
 BEGIN
 	declare vb_s_id binary(16);
@@ -292,9 +292,9 @@ END
 	Si devuelve 0 el usuario y la contraseña es correcta
     Si devuelve -1 el usuario y la contrase son incorrectas*/
 
-DROP PROCEDURE IF EXISTS LoginAJ;
+DROP PROCEDURE IF EXISTS pa_LoginAJ;
 DELIMITER //
-CREATE  PROCEDURE LoginAJ(in pc_char char, in pv_username varchar(40), in pv_password varchar(200), out pi_valid int)
+CREATE  PROCEDURE pa_LoginAJ(in pc_char char, in pv_username varchar(40), in pv_password varchar(200), out pi_valid int)
 BEGIN
 	Declare vb_id binary(16);
     Declare vv_user varchar(40);
@@ -326,10 +326,10 @@ END
 
 
 
-drop procedure if exists GeneratePassword;
+drop procedure if exists pa_GeneratePassword;
 
 DELIMITER //
-CREATE PROCEDURE GeneratePassword(out pv_word varchar(8))
+CREATE PROCEDURE pa_GeneratePassword(out pv_word varchar(8))
 Begin
     Declare vi_cont int;
     set pv_word = '';
@@ -342,9 +342,9 @@ end
 
 // DELIMITER ;
 
-DROP PROCEDURE IF EXISTS LoginTeacherAO;
+DROP PROCEDURE IF EXISTS pa_LoginTeacherAO;
 DELIMITER //
-CREATE PROCEDURE LoginTeacherAO(IN username VARCHAR(40), IN pwd VARCHAR(250), OUT valid INT)
+CREATE PROCEDURE pa_LoginTeacherAO(IN username VARCHAR(40), IN pwd VARCHAR(250), OUT valid INT)
 BEGIN
 	DECLARE exist BINARY(16);
     SELECT SZ_008_Id FROM sz_008_teachers  WHERE SZ_008_Nick LIKE username AND SZ_008_Password LIKE pwd INTO exist;
@@ -356,10 +356,10 @@ BEGIN
 END
 // DELIMITER ;
 
-DROP PROCEDURE IF EXISTS GetStudent;
+DROP PROCEDURE IF EXISTS pa_GetStudent;
 
 DELIMITER //
-CREATE PROCEDURE GetStudent(in pv_Name varchar(50),
+CREATE PROCEDURE pa_GetStudent(in pv_Name varchar(50),
 							in pv_SN1 varchar(100),
 							in pv_SN2 varchar(100))
 BEGIN
@@ -367,19 +367,19 @@ BEGIN
 END
 // DELIMITER ;
 
-drop procedure if exists GetLicence;
+drop procedure if exists pa_GetLicence;
 DELIMITER //
-CREATE PROCEDURE GetLicence(in pv_School_Manager varchar(50),
+CREATE PROCEDURE pa_GetLicence(in pv_School_Manager varchar(50),
 							out pv_Licence varchar(29))
 BEGIN
 	set pv_Licence = (select l.sz_015_Licence from sz_015_school_licences l join sz_007_school_managers m on l.sz_015_School_Id = m.sz_007_Schools_Id where m.sz_007_Nick like upper(pv_School_Manager));
 END
 // DELIMITER ;
 
-DROP PROCEDURE IF EXISTS GetManager;
+DROP PROCEDURE IF EXISTS pa_GetManager;
 
 DELIMITER //
-CREATE PROCEDURE GetManager(in pv_Nick varchar(15),
+CREATE PROCEDURE pa_GetManager(in pv_Nick varchar(15),
 							out pv_name varchar(50),
                             out pv_sn1 varchar(50),
                             out pv_sn2 varchar(15))
@@ -390,4 +390,88 @@ BEGIN
 END
 // DELIMITER ;
 
+DROP PROCEDURE IF EXISTS pa_ModTeacher;
+
+DELIMITER //
+CREATE PROCEDURE pa_ModTeacher(in pv_School_Manager_Nick varchar(50),
+                            in pv_Name varchar(50),
+							in pv_SN1 varchar(100),
+							in pv_SN2 varchar(100),
+							in pdt_Birth date,
+                            in pv_Nationality varchar(50),
+                            in pv_Country varchar(30),
+                            in pv_City varchar(30),
+                            in pv_PostalCode varchar(5),
+                            in pv_Address varchar(200),
+                            in pv_Email varchar(100),
+                            in pv_Nick varchar(15),
+                            in pv_Password varchar(200),
+                            in pv_Phone1 varchar(15),
+                            in pv_Phone2 varchar(15),
+                            out pi_r int)
+begin 
+	Declare vb_id Binary(16);
+    Delete from SZ_008_teachers where SZ_008_Nick = pv_Nick;
+	INSERT INTO `schoolerzz`.`sz_008_teachers`
+	(`SZ_008_Id`,
+	`SZ_008_Name`,
+	`SZ_008_SN1`,
+	`SZ_008_SN2`,
+	`SZ_008_Birth`,
+	`SZ_008_Nationality`,
+	`SZ_008_Country`,
+	`SZ_008_City`,
+	`SZ_008_PostalCode`,
+	`SZ_008_Address`,
+	`SZ_008_Email`,
+	`SZ_008_Nick`,
+	`SZ_008_Password`,
+	`SZ_008_Phone1`
+	)
+	VALUES
+	(UUID_TO_BIN(UUID()),
+	pv_Name,
+	pv_SN1,
+	pv_SN2,
+	pdt_Birth,
+	pv_Nationality,
+	pv_Country,
+	pv_City,
+	pv_PostalCode,
+	pv_Address,
+	pv_Email,
+	pv_Nick,
+	md5(pv_Password),
+	pv_Phone1
+	);
+	set vb_id = (SELECT SZ_008_Id from sz_008_teachers where SZ_008_Name like pv_Name and SZ_008_SN1 like pv_SN1 and SZ_008_SN2 like pv_SN2);  
+	if pv_Phone2 not like '' then
+		update sz_008_teachers set sz_008_Phone2 = pv_Phone2 where SZ_008_Id = vb_id;
+	end if;
+END
+// DELIMITER ;
+
+Drop Procedure if Exists pa_DeleteTeacher;
+
+DELIMITER //
+CREATE PROCEDURE pa_DeleteTeacher(in vv_Nick Varchar(15), out pi_r int)
+BEGIN
+	Delete from SZ_008_teachers where SZ_008_Nick = pv_Nick;
+	if(Select * from SZ_008_teachers where SZ_008_Nick = pv_Nick Is NULL) then
+		set pi_r = 0;
+	Else
+		set pi_r = 0-1;
+	END IF;
+END
+// DELIMITER ;
+
+Drop Procedure if Exists pa_GetTeachers;
+DELIMITER //
+CREATE PROCEDURE pa_GetTeachers(in pv_Name varchar(50),
+							in pv_SN1 varchar(100),
+							in pv_SN2 varchar(100))
+BEGIN
+	select * from sz_008_teachers where sz_008_Name = pv_Name and sz_008_SN1 = pv_SN1 and sz_008_SN2 = pv_SN2; 
+END
+// DELIMITER ;
 
