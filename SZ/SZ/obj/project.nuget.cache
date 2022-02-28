@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hbqjYrnwXG1WAx11WbabVoVv/AiU83B+DanzchH7i9L9yhy9xf1GhvswxLTlT13wja5nREpH6SeTfZkTA44vXw==",
+  "dgSpecHash": "YnHyvqymR/Bvf6EFaHtrBUgTik2yIt92qj8uzhq268yGOLxtrDEA4k3+Y5BIYKrlm8dDTXPLasL/leCPITO0kQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\SchoolerzZ\\asd\\WPF_SchoolerzZ\\SZ\\SZ\\SZ.csproj",
+  "projectFilePath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\SchoolerzZ\\WPF_SchoolerzZ\\SZ\\SZ\\SZ.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Usuario\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\fontawesome.wpf\\4.7.0.9\\fontawesome.wpf.4.7.0.9.nupkg.sha512",

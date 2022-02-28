@@ -33,7 +33,8 @@ namespace SZ
         public void mostrarPaginaInicio()
         {
             App.Parent = this;
-            this.parent.Navigate(login);
+            //this.parent.Navigate(login);
+            this.parent.Navigate(new GetStudent());
         }
         private void btn_Students_Click(object sender, RoutedEventArgs e)
         {

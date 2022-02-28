@@ -78,6 +78,9 @@ namespace SZ.Pages
                     App.Parent.DataContext = new SchoolManager(bind);
                     App.Parent.stp_MenuLat.Visibility = Visibility.Visible;
                     App.Parent.parent.Navigate(new MainMenu());
+                    
+                    //App.Parent.parent.Navigate(new GetStudent());
+
                     App.Parent.title.Visibility = Visibility.Collapsed;
                     App.Parent.title2.Visibility = Visibility.Visible;
                     App.Parent.stp_GorilaMid.Visibility = Visibility.Collapsed;

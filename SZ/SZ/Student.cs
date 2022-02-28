@@ -24,6 +24,7 @@ namespace SZ
         private string _observations;
         private string _photoRoute;
         private string _password;
+        private string _stringBirth;
         public Student() 
         { 
 
@@ -62,6 +63,9 @@ namespace SZ
         public string Observations { get => _observations; set => _observations = value; }
         public string PhotoRoute { get => _photoRoute; set => _photoRoute = value; }
         public string Password { get => _password; set => _password = value; }
+        public string StringBirth { get => _stringBirth; set => _stringBirth = Birth.ToString(); }
+
+        
         
         //public int AddStudent(string name, string surname1, string surname2, DateTime birth, string nationality, string country, string city, string postalCode, string address, string email, string medical, string observations, string photoRoute)
         //{

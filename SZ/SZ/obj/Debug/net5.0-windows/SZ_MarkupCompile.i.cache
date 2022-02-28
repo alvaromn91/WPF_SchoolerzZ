@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Usuario\OneDrive\Escritorio\SchoolerzZ\asd\WPF_SchoolerzZ\SZ\SZ\obj\Debug\net5.0-windows\
+C:\Users\Usuario\OneDrive\Escritorio\SchoolerzZ\WPF_SchoolerzZ\SZ\SZ\obj\Debug\net5.0-windows\
 SZ
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-C:\Users\Usuario\OneDrive\Escritorio\SchoolerzZ\asd\WPF_SchoolerzZ\SZ\SZ\App.xaml
-5-715485270
+C:\Users\Usuario\OneDrive\Escritorio\SchoolerzZ\WPF_SchoolerzZ\SZ\SZ\App.xaml
+6-1457982235
 12667851542
-11-52860612
+12-877103480
 204-1797836212
-Blink.xaml;MainWindow.xaml;Pages\AddStudent.xaml;Pages\Login.xaml;Pages\MainMenu.xaml;
+Blink.xaml;MainWindow.xaml;Pages\AddStudent.xaml;Pages\GetStudent.xaml;Pages\Login.xaml;Pages\MainMenu.xaml;
 
-False
+True
 

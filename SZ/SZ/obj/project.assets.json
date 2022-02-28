@@ -971,11 +971,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\SchoolerzZ\\asd\\WPF_SchoolerzZ\\SZ\\SZ\\SZ.csproj",
+      "projectUniqueName": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\SchoolerzZ\\WPF_SchoolerzZ\\SZ\\SZ\\SZ.csproj",
       "projectName": "SZ",
-      "projectPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\SchoolerzZ\\asd\\WPF_SchoolerzZ\\SZ\\SZ\\SZ.csproj",
+      "projectPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\SchoolerzZ\\WPF_SchoolerzZ\\SZ\\SZ\\SZ.csproj",
       "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\SchoolerzZ\\asd\\WPF_SchoolerzZ\\SZ\\SZ\\obj\\",
+      "outputPath": "C:\\Users\\Usuario\\OneDrive\\Escritorio\\SchoolerzZ\\WPF_SchoolerzZ\\SZ\\SZ\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -246,3 +246,8 @@ C:\Users\admin-dam2b\Desktop\GIT\WPF_SchoolerzZ\SZ\SZ\obj\Debug\net5.0-windows\S
 C:\Users\admin-dam2b\Desktop\Projects\WPF_SchoolerzZ\SZ\SZ\obj\Debug\net5.0-windows\Pages\AddStudent.g.cs
 C:\Users\admin-dam2b\Desktop\Projects\WPF_SchoolerzZ\SZ\SZ\obj\Debug\net5.0-windows\Pages\AddStudent.baml
 C:\Users\admin-dam2b\Desktop\Projects\WPF_SchoolerzZ\SZ\SZ\obj\Debug\net5.0-windows\Blink.baml
+C:\Users\Usuario\OneDrive\Escritorio\SchoolerzZ\WPF_SchoolerzZ\SZ\SZ\obj\Debug\net5.0-windows\Blink.baml
+C:\Users\Usuario\OneDrive\Escritorio\SchoolerzZ\WPF_SchoolerzZ\SZ\SZ\obj\Debug\net5.0-windows\Pages\AddStudent.g.cs
+C:\Users\Usuario\OneDrive\Escritorio\SchoolerzZ\WPF_SchoolerzZ\SZ\SZ\obj\Debug\net5.0-windows\Pages\GetStudent.g.cs
+C:\Users\Usuario\OneDrive\Escritorio\SchoolerzZ\WPF_SchoolerzZ\SZ\SZ\obj\Debug\net5.0-windows\Pages\AddStudent.baml
+C:\Users\Usuario\OneDrive\Escritorio\SchoolerzZ\WPF_SchoolerzZ\SZ\SZ\obj\Debug\net5.0-windows\Pages\GetStudent.baml

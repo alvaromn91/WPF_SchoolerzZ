@@ -12,8 +12,8 @@ namespace SZ
 {
     public class AccesoDatos
     {
-        //string connectionString = "datasource=localhost;port=3306;username=root;password=7101991a;database=schoolerzz;";
-        string connectionString = "datasource=localhost;port=3306;username=root;password=1234;database=schoolerzz;";
+        string connectionString = "datasource=localhost;port=3306;username=root;password=7101991a;database=schoolerzz;";
+        //string connectionString = "datasource=localhost;port=3306;username=root;password=1234;database=schoolerzz;";
         //string connectionString = "datasource=172.16.51.7;port=3306;username=root;password=1234;database=schoolerzz;";
 
         MySqlConnection databaseConnection;
@@ -92,7 +92,7 @@ namespace SZ
             cmd.Parameters.Add(new MySqlParameter("pdt_Birth", birth));
             cmd.Parameters.Add(new MySqlParameter("pv_Nationality", nationality));
             cmd.Parameters.Add(new MySqlParameter("pv_Country", country));
-            cmd.Parameters.Add(new MySqlParameter("pv_city", city));
+            cmd.Parameters.Add(new MySqlParameter("pv_City", city));
             cmd.Parameters.Add(new MySqlParameter("pv_PostalCode", postalCode));
             cmd.Parameters.Add(new MySqlParameter("pv_Address", address));
             cmd.Parameters.Add(new MySqlParameter("pv_Email", email));
@@ -100,7 +100,6 @@ namespace SZ
             cmd.Parameters.Add(new MySqlParameter("pt_Medical", medical));
             cmd.Parameters.Add(new MySqlParameter("pt_Observations", observations));
             cmd.Parameters.Add(new MySqlParameter("pt_Photo_Internal_Route", photoRoute));
-            cmd.Parameters.Add(new MySqlParameter("pv_Licence", "")); //Licencia
 
             cmd.Parameters.Add(new MySqlParameter("pi_r", MySqlDbType.Int32));
             cmd.Parameters["pi_r"].Direction = ParameterDirection.Output;
@@ -128,6 +127,26 @@ namespace SZ
 
             CerrarConexion();
             return s;
+        }
+
+        public List<string> GetStudent(string name, string surname1, string surname2)
+        {
+            List<string> lista = new List<string>();
+            MySqlCommand cmd = new MySqlCommand("pa_AddStudent", databaseConnection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new MySqlParameter("pv_Name", name));
+            cmd.Parameters.Add(new MySqlParameter("pv_SN1", surname1));
+            cmd.Parameters.Add(new MySqlParameter("pv_SN2", surname2));
+
+            MySqlDataReader rdr = cmd.ExecuteReader(); // FALLAAAAAAAAAAAAA
+
+            foreach (string objeto in rdr)
+            {
+                lista.Add(objeto.ToString());
+            }
+            
+            rdr.Close();
+            return lista;
         }
     }    
 }
