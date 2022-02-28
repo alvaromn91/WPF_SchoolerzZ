@@ -41,24 +41,64 @@
                 <TextBlock Text="*" Name="req_SN1" VerticalAlignment="Top" FontSize="12" materialDesign:HintAssist.Hint="Usuario" FontFamily="Bernard MT Condensed" Visibility="Hidden"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10" VerticalAlignment="Center" Grid.Column="2" Grid.Row="1" >
-                <TextBox x:Name="tb_SN2" FontSize="32" Width="280" materialDesign:HintAssist.Hint="Apellido 2" FontFamily="Bernard MT Condensed" Margin="30"/>
+                <TextBox x:Name="tb_SN2" FontSize="32" Width="280" materialDesign:HintAssist.Hint="Apellido 2" FontFamily="Bernard MT Condensed" Margin="30" Cursor="IBeam"/>
                 <TextBlock Text="*" Name="req_SN2" VerticalAlignment="Top" FontSize="12" materialDesign:HintAssist.Hint="Usuario" FontFamily="Bernard MT Condensed" Visibility="Hidden"/>
             </StackPanel>
             <Button x:Name="btn_Search" Click="btn_Search_Click" HorizontalAlignment="Center" Margin="10" VerticalAlignment="Center" FontSize="20"  Background="#FFCC6649" BorderBrush="#FFCC6649" Foreground="White" Height="50" Width="170" FontFamily="Bernard MT" Cursor="Hand" Grid.Column="2" Grid.Row="2">Buscar</Button>
         </StackPanel>
-        <WrapPanel Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="2" HorizontalAlignment="Center" Orientation="Horizontal" Visibility="Visible" x:Name="sp_Data">
-            <TextBlock x:Name="tbk_name" FontSize="32" Width="280" materialDesign:HintAssist.Hint="{Binding Path=Name}" FontFamily="Bernard MT Condensed"/>
-            <TextBlock x:Name="tbk_SN1" FontSize="32" Width="280" materialDesign:HintAssist.Hint="{Binding Path=Surname1}" FontFamily="Bernard MT Condensed"/>
-            <TextBlock x:Name="tbk_SN2" FontSize="32" Width="280" materialDesign:HintAssist.Hint="{Binding Path=Surname2}" FontFamily="Bernard MT Condensed"/>
-            <TextBlock x:Name="tbk_birth" FontSize="32" Width="280" materialDesign:HintAssist.Hint="{Binding Path=StringBirth}" FontFamily="Bernard MT Condensed"/>
-            <TextBlock x:Name="tbk_Nationality" FontSize="32" Width="280" materialDesign:HintAssist.Hint="{Binding Path=Surname2}" FontFamily="Bernard MT Condensed"/>
-            <TextBlock x:Name="tbk_Country" FontSize="32" Width="280" materialDesign:HintAssist.Hint="{Binding Path=Surname2}" FontFamily="Bernard MT Condensed"/>
-            <TextBlock x:Name="tbk_City" FontSize="32" Width="280" materialDesign:HintAssist.Hint="{Binding Path=Surname2}" FontFamily="Bernard MT Condensed"/>
-            <TextBlock x:Name="tbk_PostalCode" FontSize="32" Width="280" materialDesign:HintAssist.Hint="{Binding Path=Surname2}" FontFamily="Bernard MT Condensed"/>
-            <TextBlock x:Name="tbk_Address" FontSize="32" Width="280" materialDesign:HintAssist.Hint="{Binding Path=Surname2}" FontFamily="Bernard MT Condensed"/>
-            <TextBlock x:Name="tbk_Email" FontSize="32" Width="280" materialDesign:HintAssist.Hint="{Binding Path=Surname2}" FontFamily="Bernard MT Condensed"/>
-            <TextBlock x:Name="tbk_Medical" FontSize="24" Width="280" materialDesign:HintAssist.Hint="{Binding Path=Medical}" FontFamily="Bernard MT Condensed" Margin="30" ScrollViewer.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" MaxHeight="172"/>
-            <TextBlock x:Name="tbk_Observations" FontSize="24" Width="280" materialDesign:HintAssist.Hint="{Binding Path=Obsevations}" FontFamily="Bernard MT Condensed" Margin="30" ScrollViewer.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" MaxHeight="172"/>
+        <WrapPanel Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="2" HorizontalAlignment="Center" Orientation="Horizontal" Visibility="Collapsed"  x:Name="sp_Data">
+            <StackPanel Orientation="Horizontal" Margin="30">
+                <TextBlock FontSize="32" Width="280" Text="Nombre: " FontFamily="Bernard MT Condensed"  Foreground="#FFCC6649"/>
+                <TextBlock x:Name="tbk_name" FontSize="32" Width="280" Text="{Binding Path=Name}" FontFamily="Bernard MT Condensed"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="30">
+                <TextBlock FontSize="32" Width="280" Text="Apellido 1: " FontFamily="Bernard MT Condensed"  Foreground="#FFCC6649"/>
+                <TextBlock x:Name="tbk_SN1" FontSize="32" Width="280" Text="{Binding Path=Surname1}" FontFamily="Bernard MT Condensed"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="30">
+                <TextBlock FontSize="32" Width="280" Text="Apellido 2: " FontFamily="Bernard MT Condensed"  Foreground="#FFCC6649"/>
+                <TextBlock x:Name="tbk_SN2" FontSize="32" Width="280" Text="{Binding Path=Surname2}" FontFamily="Bernard MT Condensed"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="30">
+                <TextBlock FontSize="32" Width="280" Text="Fecha Nac.: " FontFamily="Bernard MT Condensed"  Foreground="#FFCC6649"/>
+                <TextBlock x:Name="tbk_birth" FontSize="32" Width="280" Text="{Binding Path=StringBirth}" FontFamily="Bernard MT Condensed"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="30">
+                <TextBlock FontSize="32" Width="280" Text="Nacionalidad: " FontFamily="Bernard MT Condensed"  Foreground="#FFCC6649"/>
+                <TextBlock x:Name="tbk_Nationality" FontSize="32" Width="280" Text="{Binding Path=Nationality}" FontFamily="Bernard MT Condensed"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="30">
+                <TextBlock FontSize="32" Width="280" Text="País: " FontFamily="Bernard MT Condensed"  Foreground="#FFCC6649"/>
+                <TextBlock x:Name="tbk_Country" FontSize="32" Width="280" Text="{Binding Path=Country}" FontFamily="Bernard MT Condensed"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="30">
+                <TextBlock FontSize="32" Width="280" Text="Ciudad: " FontFamily="Bernard MT Condensed"  Foreground="#FFCC6649"/>
+                <TextBlock x:Name="tbk_City" FontSize="32" Width="280" Text="{Binding Path=City}" FontFamily="Bernard MT Condensed"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="30">
+                <TextBlock FontSize="32" Width="280" Text="Código Postal: " FontFamily="Bernard MT Condensed"  Foreground="#FFCC6649"/>
+                <TextBlock x:Name="tbk_PostalCode" FontSize="32" Width="280" Text="{Binding Path=PostalCode}" FontFamily="Bernard MT Condensed"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="30">
+                <TextBlock FontSize="32" Width="280" Text="Dirección: " FontFamily="Bernard MT Condensed"  Foreground="#FFCC6649"/>
+                <TextBlock x:Name="tbk_Address" FontSize="32" Width="280" Text="{Binding Path=Address}" FontFamily="Bernard MT Condensed"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="30">
+                <TextBlock FontSize="32" Width="280" Text="Email: " FontFamily="Bernard MT Condensed"  Foreground="#FFCC6649"/>
+                <TextBlock x:Name="tbk_Email" FontSize="32" Width="280" Text="{Binding Path=Email}" FontFamily="Bernard MT Condensed" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="30">
+                <TextBlock FontSize="32" Width="280" Text="Obs. Médicas: " FontFamily="Bernard MT Condensed"  Foreground="#FFCC6649"/>
+                <TextBlock x:Name="tbk_Medical" FontSize="24" Width="280" Text="{Binding Path=Medical}" FontFamily="Bernard MT Condensed" ScrollViewer.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" MaxHeight="172"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="30">
+                <TextBlock FontSize="32" Width="280" Text="Observaciones: " FontFamily="Bernard MT Condensed" Foreground="#FFCC6649"/>
+                <TextBlock x:Name="tbk_Observations" FontSize="24" Width="280" Text="{Binding Path=Observations}" FontFamily="Bernard MT Condensed" ScrollViewer.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" MaxHeight="172"/>
+            </StackPanel>
+            <StackPanel Margin="30">
+                <Button x:Name="btn_back" Click="btn_back_Click" HorizontalAlignment="Center" Margin="10" Visibility="Collapsed" VerticalAlignment="Center" FontSize="20"  Background="#FFCC6649" BorderBrush="#FFCC6649" Foreground="White" Height="50" Width="170" FontFamily="Bernard MT" Cursor="Hand">Atrás</Button>
+            </StackPanel>
         </WrapPanel>
+        
     </Grid>
 </Page>

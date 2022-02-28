@@ -1,3 +1,4 @@
+use schoolerzz;
 drop PROCEDURE if exists pa_CreateNick;
 
 -- CreateNick: Crea un Nick único para un usuario
@@ -475,9 +476,9 @@ BEGIN
 END
 // DELIMITER ;
 
-Drop Procedure if Exists pa_GetGruop;
+Drop Procedure if Exists pa_GetGroup;
 DELIMITER //
-CREATE PROCEDURE pa_GetGruop(in pv_Stage varchar(50),
+CREATE PROCEDURE pa_GetGroup(in pv_Stage varchar(50),
 							in pi_Level Int,
 							in pv_Class varchar(100))
 BEGIN

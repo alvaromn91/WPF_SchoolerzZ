@@ -46,7 +46,8 @@ namespace SZ
             Medical = medical;
             Observations = observations;
             PhotoRoute = photoRoute;
-            
+            StringBirth = Birth.ToString("dd/MM/yyyy");
+
         }
 
         public string Name { get => _name; set => _name = value; }
@@ -63,7 +64,7 @@ namespace SZ
         public string Observations { get => _observations; set => _observations = value; }
         public string PhotoRoute { get => _photoRoute; set => _photoRoute = value; }
         public string Password { get => _password; set => _password = value; }
-        public string StringBirth { get => _stringBirth; set => _stringBirth = Birth.ToString(); }
+        public string StringBirth { get => _stringBirth; set => _stringBirth = value; }
 
         
         

@@ -29,8 +29,16 @@ namespace SZ.Pages
         {
             List<string> datos = new AccesoDatos().GetStudent(tb_Name.Text.ToString(), tb_SN1.Text.ToString(), tb_SN2.Text.ToString());
 
-            App.Parent.DataContext = new Student(datos[0], datos[1], datos[2], Convert.ToDateTime(datos[3]), datos[4], datos[5], datos[6], datos[7], 
-                                                 datos[8], datos[9], datos[10], datos[11], datos[12], datos[13]); 
+            App.Parent.DataContext = new Student(datos[1], datos[2], datos[3], Convert.ToDateTime(datos[4]), datos[5], datos[6], datos[7], 
+                                                 datos[8], datos[9], datos[10], datos[12], datos[13], datos[14], datos[15]);
+            sp_Search.Visibility = Visibility.Collapsed;
+            sp_Data.Visibility = Visibility.Visible;
+            btn_back.Visibility = Visibility.Visible;
+        }
+
+        private void btn_back_Click(object sender, RoutedEventArgs e)
+        {
+            App.Parent.parent.NavigationService.Navigate(new MainMenu());
         }
     }
 }

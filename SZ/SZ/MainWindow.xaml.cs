@@ -33,8 +33,7 @@ namespace SZ
         public void mostrarPaginaInicio()
         {
             App.Parent = this;
-            //this.parent.Navigate(login);
-            this.parent.Navigate(new GetStudent());
+            this.parent.Navigate(login);
         }
         private void btn_Students_Click(object sender, RoutedEventArgs e)
         {
@@ -124,7 +123,7 @@ namespace SZ
 
         private void btn_Search_U_S_Click(object sender, RoutedEventArgs e)
         {
-
+            parent.NavigationService.Navigate(new GetStudent());
         }
 
         private void btn_Add_S_Click_1(object sender, RoutedEventArgs e)

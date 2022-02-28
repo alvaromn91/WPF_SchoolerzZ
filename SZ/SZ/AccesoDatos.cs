@@ -132,20 +132,28 @@ namespace SZ
         public List<string> GetStudent(string name, string surname1, string surname2)
         {
             List<string> lista = new List<string>();
-            MySqlCommand cmd = new MySqlCommand("pa_AddStudent", databaseConnection);
+            MySqlCommand cmd = new MySqlCommand("pa_GetStudentByName", databaseConnection);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add(new MySqlParameter("pv_Name", name));
             cmd.Parameters.Add(new MySqlParameter("pv_SN1", surname1));
             cmd.Parameters.Add(new MySqlParameter("pv_SN2", surname2));
 
+            EstablecerConexion();
+
             MySqlDataReader rdr = cmd.ExecuteReader(); // FALLAAAAAAAAAAAAA
 
-            foreach (string objeto in rdr)
+            while(rdr.Read())
             {
-                lista.Add(objeto.ToString());
+                for (int i = 0; i < rdr.FieldCount; i++)
+                {
+                    lista.Add(rdr.GetValue(i).ToString());
+                    //MessageBox.Show(rdr.GetValue(i).ToString());
+                }
             }
             
             rdr.Close();
+            CerrarConexion();
+            
             return lista;
         }
     }    

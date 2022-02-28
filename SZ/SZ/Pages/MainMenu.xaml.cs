@@ -61,5 +61,10 @@ namespace SZ.Pages
         {
             App.Parent.parent.NavigationService.Navigate(new AddStudent());
         }
+
+        private void btn_S_Buscar_Click(object sender, RoutedEventArgs e)
+        {
+            App.Parent.parent.NavigationService.Navigate(new GetStudent());
+        }
     }
 }
