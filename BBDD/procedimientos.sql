@@ -356,10 +356,10 @@ BEGIN
 END
 // DELIMITER ;
 
-DROP PROCEDURE IF EXISTS pa_GetStudent;
+DROP PROCEDURE IF EXISTS pa_GetStudentByName;
 
 DELIMITER //
-CREATE PROCEDURE pa_GetStudent(in pv_Name varchar(50),
+CREATE PROCEDURE pa_GetStudentByName(in pv_Name varchar(50),
 							in pv_SN1 varchar(100),
 							in pv_SN2 varchar(100))
 BEGIN
@@ -474,3 +474,123 @@ BEGIN
 	select * from sz_008_teachers where sz_008_Name = pv_Name and sz_008_SN1 = pv_SN1 and sz_008_SN2 = pv_SN2; 
 END
 // DELIMITER ;
+
+Drop Procedure if Exists pa_GetGruop;
+DELIMITER //
+CREATE PROCEDURE pa_GetGruop(in pv_Stage varchar(50),
+							in pi_Level Int,
+							in pv_Class varchar(100))
+BEGIN
+	select * from sz_001_groups where SZ_001_Stage = pv_Stage and SZ_001_Level = pi_Level and SZ_001_Class = pv_Class; 
+END
+// DELIMITER ;
+
+Drop Procedure if Exists pa_GetSchoolManagerByName;
+DELIMITER //
+CREATE PROCEDURE pa_GetSchoolManagerByName(in pv_Name varchar(50),
+							in pv_SN1 varchar(100),
+							in pv_SN2 varchar(100))
+BEGIN
+	select * from sz_007_school_managers where SZ_007_Name = pv_Name and sz_007_SN1 = pv_SN1 and sz_007_SN2 = pv_SN2; 
+END
+// DELIMITER ;
+
+Drop Procedure if Exists pa_GetSchoolManagerBySchool;
+DELIMITER //
+CREATE PROCEDURE pa_GetSchoolManagerBySchool(in pv_School Varchar(50))
+BEGIN
+	Declare vi_schoolId Binary(16);
+    set vi_schoolId = (Select sz_006_Id from sz_006_schools where sz_006_name = pv_school);
+	select * from sz_007_school_managers where SZ_007_Schools_Id = vi_schoolId;
+END
+// DELIMITER ;
+
+Drop Procedure if Exists pa_DeleteStudent;
+DELIMITER //
+CREATE PROCEDURE pa_DeleteStudent(in pv_Name varchar(50),
+							in pv_SN1 varchar(100),
+							in pv_SN2 varchar(100))
+BEGIN
+	Delete from sz_002_student where sz_002_Name = pv_Name and sz_002_SN1 = pv_SN1 and sz_002_SN2 = pv_SN2;
+END
+// DELIMITER ;
+
+Drop Procedure if Exists pa_DeleteParent;
+DELIMITER //
+CREATE PROCEDURE pa_DeleteParent(in pv_Name varchar(50),
+							in pv_SN1 varchar(100),
+							in pv_SN2 varchar(100))
+BEGIN
+	Delete from sz_003_parents where sz_003_Name = pv_Name and sz_003_SN1 = pv_SN1 and sz_003_SN2 = pv_SN2;
+END
+// DELIMITER ;
+
+Drop Procedure if Exists pa_DeleteGroup;
+DELIMITER //
+CREATE PROCEDURE pa_DeleteGroup(in pv_Stage varchar(50),
+							in pi_Level Int,
+							in pv_Class varchar(100),
+                            in pv_School varchar(50))
+BEGIN
+	Declare vi_schoolId Binary(16);
+    set vi_schoolId = (Select sz_006_Id from sz_006_schools where sz_006_name = pv_school);
+	Delete from sz_001_groups where sz_001_Stage = pv_Stage and sz_001_Level = pi_Level and sz_001_Class = pv_Class and SZ_001_Schools_Id = vi_schoolId;
+END
+// DELIMITER ;
+
+Drop Procedure if Exists pa_ModTParent;
+DELIMITER //
+CREATE PROCEDURE pa_ModTParent(in pv_School_Manager_Nick varchar(50),
+                           in pv_Name varchar(50),
+                           in pv_SN1 varchar(100),
+                           in pv_SN2 varchar(100),
+                           in pdt_Birth date,
+                           in pv_Nationality varchar(50),
+                           in pv_Country varchar(30),
+                           in pv_City varchar(30),
+                           in pv_PostalCode varchar(5),
+                           in pv_Address varchar(200),
+                           in pv_Email varchar(100),
+                           in pv_Password varchar(200),
+                           in pv_Phone1 varchar(15),
+                           in pv_Phone2 varchar(15),
+                           in pv_Student_Nick varchar(15),
+                           out pi_r int)
+begin 
+	Declare vb_id Binary(16);
+    Delete from SZ_003_parents where SZ_003_Nick = pv_Nick;
+	INSERT INTO `schoolerzz`.`sz_003_parents`
+	(`SZ_003_Id`,
+    `SZ_003_Name`,
+    `SZ_003_SN1`,
+    `SZ_003_SN2`,
+    `SZ_003_Birth`,
+    `SZ_003_Nationality`,
+    `SZ_003_Country`,
+    `SZ_003_City`,
+    `SZ_003_PostalCode`,
+    `SZ_003_Address`,
+    `SZ_003_Email`,
+    `SZ_003_Password`,
+    `SZ_003_Phone1`
+    )
+    VALUES
+    (UUID_TO_BIN(UUID()),
+    pv_Name,
+    pv_SN1,
+    pv_SN2,
+    pdt_Birth,
+    pv_Nationality,
+    pv_Country,
+    pv_City,
+    pv_PostalCode,
+    pv_Address,
+    pv_Email,
+    md5(pv_Password),
+    pv_Phone1
+    );
+	set vb_id = (SELECT SZ_003_Id from sz_003_parents where SZ_003_Name like pv_Name and SZ_003_SN1 like pv_SN1 and SZ_003_SN2 like pv_SN2);  
+	if pv_Phone2 not like '' then
+		update sz_003_parents set sz_003_Phone2 = pv_Phone2 where SZ_003_Id = vb_id;
+	end if;
+END
