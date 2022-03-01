@@ -18,7 +18,12 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/icons8-ni%c3%b1os-50.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/logo_mid.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/mojo.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/musica.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/pause.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/play.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/school.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/stop.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/students.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("music/song.mp3")]
 
 

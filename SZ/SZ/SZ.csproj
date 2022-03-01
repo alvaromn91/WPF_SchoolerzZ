@@ -17,8 +17,13 @@
     <None Remove="Images\icons8-niños-50.png" />
     <None Remove="Images\logo_mid.png" />
     <None Remove="Images\mojo.png" />
+    <None Remove="Images\musica.png" />
+    <None Remove="Images\pause.png" />
+    <None Remove="Images\play.png" />
     <None Remove="Images\School.png" />
+    <None Remove="Images\stop.png" />
     <None Remove="Images\Students.png" />
+    <None Remove="Music\song.mp3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -64,10 +69,25 @@
     <Content Include="Images\mojo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\musica.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\pause.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\play.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\School.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\stop.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\Students.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Music\song.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

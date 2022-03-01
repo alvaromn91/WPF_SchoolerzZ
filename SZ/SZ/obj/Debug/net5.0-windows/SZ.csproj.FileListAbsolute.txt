@@ -251,3 +251,10 @@ C:\Users\Usuario\OneDrive\Escritorio\SchoolerzZ\WPF_SchoolerzZ\SZ\SZ\obj\Debug\n
 C:\Users\Usuario\OneDrive\Escritorio\SchoolerzZ\WPF_SchoolerzZ\SZ\SZ\obj\Debug\net5.0-windows\Pages\GetStudent.g.cs
 C:\Users\Usuario\OneDrive\Escritorio\SchoolerzZ\WPF_SchoolerzZ\SZ\SZ\obj\Debug\net5.0-windows\Pages\AddStudent.baml
 C:\Users\Usuario\OneDrive\Escritorio\SchoolerzZ\WPF_SchoolerzZ\SZ\SZ\obj\Debug\net5.0-windows\Pages\GetStudent.baml
+C:\Users\Usuario\OneDrive\Escritorio\SchoolerzZ\WPF_SchoolerzZ\SZ\SZ\bin\Debug\net5.0-windows\Images\musica.png
+C:\Users\Usuario\OneDrive\Escritorio\SchoolerzZ\WPF_SchoolerzZ\SZ\SZ\obj\Debug\net5.0-windows\Pages\Musica.g.cs
+C:\Users\Usuario\OneDrive\Escritorio\SchoolerzZ\WPF_SchoolerzZ\SZ\SZ\obj\Debug\net5.0-windows\Pages\Musica.baml
+C:\Users\Usuario\OneDrive\Escritorio\SchoolerzZ\WPF_SchoolerzZ\SZ\SZ\bin\Debug\net5.0-windows\Music\song.mp3
+C:\Users\Usuario\OneDrive\Escritorio\SchoolerzZ\WPF_SchoolerzZ\SZ\SZ\bin\Debug\net5.0-windows\Images\pause.png
+C:\Users\Usuario\OneDrive\Escritorio\SchoolerzZ\WPF_SchoolerzZ\SZ\SZ\bin\Debug\net5.0-windows\Images\play.png
+C:\Users\Usuario\OneDrive\Escritorio\SchoolerzZ\WPF_SchoolerzZ\SZ\SZ\bin\Debug\net5.0-windows\Images\stop.png

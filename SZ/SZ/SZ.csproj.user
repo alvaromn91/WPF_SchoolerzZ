@@ -10,6 +10,9 @@
     <Compile Update="Pages\GetStudent.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\Musica.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Blink.xaml">
@@ -28,6 +31,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\MainMenu.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Musica.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

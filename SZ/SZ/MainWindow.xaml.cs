@@ -1,18 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 using SZ.Pages;
 
 
@@ -24,10 +14,15 @@ namespace SZ
     public partial class MainWindow : Window
     {
 
-        Login login = new Login();   
+        Login login = new Login();
+        private MediaPlayer mp = new MediaPlayer();
+        private bool pulsado = false;
         public MainWindow()
         {
             InitializeComponent();
+            mp.Open(new Uri("Music/song.mp3", UriKind.Relative));
+            mp.Play();
+            mp.Volume = 0.5;
             mostrarPaginaInicio();
         }
         public void mostrarPaginaInicio()
@@ -189,6 +184,37 @@ namespace SZ
         private void btn_Search_Teachers_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+        private void btn_Pause_Click(object sender, RoutedEventArgs e)
+        {
+            mp.Pause();
+        }
+        private void btn_play_Click(object sender, RoutedEventArgs e)
+        {
+            mp.Play();
+        }
+        private void btn_stop_Click(object sender, RoutedEventArgs e)
+        {
+            mp.Stop();
+        }
+
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            mp.Volume = sl_vol.Value;
+        }
+
+        private void btn_Music_Click(object sender, RoutedEventArgs e)
+        {
+            if (!pulsado)
+            { 
+                sp_mus.Visibility = Visibility.Visible;
+                pulsado = true;
+            }
+            else 
+            {
+                sp_mus.Visibility = Visibility.Collapsed;
+                pulsado = false;
+            }
         }
     }
 }
