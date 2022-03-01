@@ -12,8 +12,8 @@ namespace SZ
 {
     public class AccesoDatos
     {
-        string connectionString = "datasource=localhost;port=3306;username=root;password=7101991a;database=schoolerzz;";
-        //string connectionString = "datasource=localhost;port=3306;username=root;password=1234;database=schoolerzz;";
+        //string connectionString = "datasource=localhost;port=3306;username=root;password=7101991a;database=schoolerzz;";
+        string connectionString = "datasource=localhost;port=3306;username=root;password=1234;database=schoolerzz;";
         //string connectionString = "datasource=172.16.51.7;port=3306;username=root;password=1234;database=schoolerzz;";
 
         MySqlConnection databaseConnection;
@@ -163,7 +163,7 @@ namespace SZ
             cmd.Parameters.Add(new MySqlParameter("pv_Name", name));
             cmd.Parameters.Add(new MySqlParameter("pv_SN1", apellido1));
             cmd.Parameters.Add(new MySqlParameter("pv_SN2", apellido2));
-            cmd.Parameters.Add(new MySqlParameter("pi_out", MySqlDbType.Int64));
+            cmd.Parameters.Add(new MySqlParameter("pi_out", MySqlDbType.Int32));
             cmd.Parameters["pi_out"].Direction = ParameterDirection.Output;
             EstablecerConexion();
 

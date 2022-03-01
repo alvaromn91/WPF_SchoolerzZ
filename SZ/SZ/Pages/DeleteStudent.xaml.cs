@@ -54,6 +54,11 @@ namespace SZ.Pages
                 if (s == 0)
                 {
                     tb_delete.Visibility = Visibility.Visible;
+                    App.Parent.parent.NavigationService.Navigate(new DeleteStudent());
+                }
+                else
+                {
+                    tb_non_deleted.Visibility = Visibility.Visible;
                 }
             }
         }

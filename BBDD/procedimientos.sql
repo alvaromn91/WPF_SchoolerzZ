@@ -192,7 +192,7 @@ end;
 drop PROCEDURE if exists pa_AddParent;
 
 DELIMITER //
-create procedure pa_AddParent(in pv_School_Manager_Nick varchar(50),
+CREATE PROCEDURE `pa_AddParent`(in pv_School_Manager_Nick varchar(50),
                            in pv_Name varchar(50),
                            in pv_SN1 varchar(100),
                            in pv_SN2 varchar(100),
@@ -245,14 +245,14 @@ begin
     md5(pv_Password),
     pv_Phone1
     );
-    set vb_id = (SELECT SZ_003_Id from sz_003_parents where SZ_003_Name like pv_Name and SZ_003_SN1 like pv_SN1 and SZ_003_SN2 like pv_SN2);  
+    set vb_id = (SELECT SZ_003_Id from sz_003_parents where SZ_003_Name like pv_Name and SZ_003_SN1 like pv_SN1 and SZ_003_SN2 like pv_SN2 AND SZ_003_ADDRESS = pv_Address);  
     INSERT INTO sz_203_students_parents(
 		`SZ_203_Id`,
         `SZ_203_Students_Id`,
         `SZ_203_Parents_Id`
     ) VALUES (
 		UUID_TO_BIN(UUID()),
-        pv_Student_Nick,
+        vb_student_id,
         vb_id
     );
     if pv_Phone2 not like '' then
@@ -262,7 +262,7 @@ begin
     set vv_nick = (select @r_nick);
     UPDATE sz_003_parents SET SZ_003_Nick = vv_nick WHERE SZ_003_Id = vb_id; 
     set pi_r = 0;
-end;
+end
 // DELIMITER ;
 
 

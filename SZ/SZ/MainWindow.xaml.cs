@@ -21,8 +21,7 @@ namespace SZ
         {
             InitializeComponent();
             mp.Open(new Uri("Music/song.mp3", UriKind.Relative));
-            mp.Play();
-            mp.Volume = 0.5;
+            mp.Volume = 0.3;
             mostrarPaginaInicio();
         }
         public void mostrarPaginaInicio()
@@ -203,14 +202,20 @@ namespace SZ
             if (!pulsado)
             { 
                 sp_mus.Visibility = Visibility.Visible;
+                mp.Play();
                 pulsado = true;
             }
             else 
             {
                 sp_mus.Visibility = Visibility.Collapsed;
+                mp.Stop();
                 pulsado = false;
             }
         }
 
+        private void btn_aboutUs_Click(object sender, RoutedEventArgs e)
+        {
+            parent.NavigationService.Navigate(new Credits());
+        }
     }
 }

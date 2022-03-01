@@ -184,13 +184,20 @@
                     </Button>
                 </StackPanel>
                     <StackPanel Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Center" Orientation="Horizontal">
-                        <Slider x:Name="sl_vol" Maximum="1" Minimum="0" Cursor="Hand" IsEnabled="True" Width="500" VerticalAlignment="Center" HorizontalAlignment="Stretch" Value="0.5" ValueChanged="Slider_ValueChanged"/>
+                        <Slider x:Name="sl_vol" Maximum="1" Minimum="0" Cursor="Hand" IsEnabled="True" Width="500" VerticalAlignment="Center" HorizontalAlignment="Stretch" Value="0.3" ValueChanged="Slider_ValueChanged"/>
                     </StackPanel>
                 </StackPanel>
                 
             </StackPanel>
         </StackPanel>
-        
+        <StackPanel Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" x:Name="stp_AU" Visibility="Collapsed" Orientation="Horizontal">
+            <TextBlock VerticalAlignment="Center" FontSize="40" Margin="10,0,0,0">About Us</TextBlock>
+            <Button x:Name="btn_aboutUs" FontFamily="Bernard MT Condensed" HorizontalAlignment="Center" VerticalAlignment="Center" Click="btn_aboutUs_Click" Background="#00F0F8FF" BorderBrush="#00E8C56A" Height="46">
+                <Button.Content>
+                    <fa:ImageAwesome Icon="Coffee" Foreground="#7FE8C56A" Width="40" Height="40" RenderTransformOrigin="0.601,-0.133"/>
+                </Button.Content>
+            </Button>
+        </StackPanel>
         <!--
         FRAME
         -->

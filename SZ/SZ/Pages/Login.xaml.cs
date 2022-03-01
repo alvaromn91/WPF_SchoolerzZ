@@ -85,6 +85,7 @@ namespace SZ.Pages
                     App.Parent.title2.Visibility = Visibility.Visible;
                     App.Parent.stp_GorilaMid.Visibility = Visibility.Collapsed;
                     App.Parent.stp_GorilaMenuLat.Visibility = Visibility.Visible;
+                    App.Parent.stp_AU.Visibility = Visibility.Visible;
                     App.nick = bind;
                     
                 }
