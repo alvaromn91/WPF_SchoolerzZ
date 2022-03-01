@@ -343,20 +343,6 @@ end
 
 // DELIMITER ;
 
-DROP PROCEDURE IF EXISTS pa_LoginTeacherAO;
-DELIMITER //
-CREATE PROCEDURE pa_LoginTeacherAO(IN username VARCHAR(40), IN pwd VARCHAR(250), OUT valid INT)
-BEGIN
-	DECLARE exist BINARY(16);
-    SELECT SZ_008_Id FROM sz_008_teachers  WHERE SZ_008_Nick LIKE username AND SZ_008_Password LIKE pwd INTO exist;
-    IF exist IS NOT NULL THEN 
-		SET valid = 0;
-    ELSE
-		SET valid = -1;
-	END IF;
-END
-// DELIMITER ;
-
 DROP PROCEDURE IF EXISTS pa_GetStudentByName;
 
 DELIMITER //
