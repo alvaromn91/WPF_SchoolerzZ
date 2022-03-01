@@ -66,5 +66,10 @@ namespace SZ.Pages
         {
             App.Parent.parent.NavigationService.Navigate(new GetStudent());
         }
+
+        private void btn_S_Delete_Click(object sender, RoutedEventArgs e)
+        {
+            App.Parent.parent.NavigationService.Navigate(new DeleteStudent());
+        }
     }
 }

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\Usuario\OneDrive\Escritorio\SchoolerzZ\WPF_SchoolerzZ\SZ\SZ\App.xaml
-7-1521377337
+81809127920
 17-2124419495
-13218583772
+14345344728
 204-1797836212
-Blink.xaml;MainWindow.xaml;Pages\AddStudent.xaml;Pages\GetStudent.xaml;Pages\Login.xaml;Pages\MainMenu.xaml;Pages\Musica.xaml;
+Blink.xaml;MainWindow.xaml;Pages\AddStudent.xaml;Pages\DeleteStudent.xaml;Pages\GetStudent.xaml;Pages\Login.xaml;Pages\MainMenu.xaml;Pages\Musica.xaml;
 
-True
+False
 

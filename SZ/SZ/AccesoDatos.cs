@@ -156,5 +156,21 @@ namespace SZ
             
             return lista;
         }
+        public int DeleteStudent(string name, string apellido1, string apellido2)
+        {
+            MySqlCommand cmd = new MySqlCommand("pa_DeleteStudent", databaseConnection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new MySqlParameter("pv_Name", name));
+            cmd.Parameters.Add(new MySqlParameter("pv_SN1", apellido1));
+            cmd.Parameters.Add(new MySqlParameter("pv_SN2", apellido2));
+            cmd.Parameters.Add(new MySqlParameter("pi_out", MySqlDbType.Int64));
+            cmd.Parameters["pi_out"].Direction = ParameterDirection.Output;
+            EstablecerConexion();
+
+            cmd.ExecuteNonQuery();
+            int s = (int)cmd.Parameters["pi_out"].Value;
+            CerrarConexion();
+            return s;
+        }
     }    
 }

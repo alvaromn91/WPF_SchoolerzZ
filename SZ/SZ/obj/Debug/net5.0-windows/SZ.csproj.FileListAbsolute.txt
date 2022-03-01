@@ -258,3 +258,5 @@ C:\Users\Usuario\OneDrive\Escritorio\SchoolerzZ\WPF_SchoolerzZ\SZ\SZ\bin\Debug\n
 C:\Users\Usuario\OneDrive\Escritorio\SchoolerzZ\WPF_SchoolerzZ\SZ\SZ\bin\Debug\net5.0-windows\Images\pause.png
 C:\Users\Usuario\OneDrive\Escritorio\SchoolerzZ\WPF_SchoolerzZ\SZ\SZ\bin\Debug\net5.0-windows\Images\play.png
 C:\Users\Usuario\OneDrive\Escritorio\SchoolerzZ\WPF_SchoolerzZ\SZ\SZ\bin\Debug\net5.0-windows\Images\stop.png
+C:\Users\Usuario\OneDrive\Escritorio\SchoolerzZ\WPF_SchoolerzZ\SZ\SZ\obj\Debug\net5.0-windows\Pages\DeleteStudent.g.cs
+C:\Users\Usuario\OneDrive\Escritorio\SchoolerzZ\WPF_SchoolerzZ\SZ\SZ\obj\Debug\net5.0-windows\Pages\DeleteStudent.baml

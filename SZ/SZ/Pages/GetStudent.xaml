@@ -29,7 +29,7 @@
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" Grid.ColumnSpan="4">
-            <Label Content="Registro de Estudiante" FontSize="50" FontFamily="Bernard MT Condensed"/>
+            <Label Content="Buscar Estudiante" FontSize="50" FontFamily="Bernard MT Condensed"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.ColumnSpan="4" HorizontalAlignment="Center" Orientation="Horizontal" Visibility="Visible" x:Name="sp_Search">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1" >

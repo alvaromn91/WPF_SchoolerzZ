@@ -121,11 +121,6 @@ namespace SZ
             parent.NavigationService.Navigate(new GetStudent());
         }
 
-        private void btn_Add_S_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void btn_Modify_S_Click(object sender, RoutedEventArgs e)
         {
 
@@ -133,7 +128,7 @@ namespace SZ
 
         private void btn_Delete_S_Click(object sender, RoutedEventArgs e)
         {
-
+            parent.NavigationService.Navigate(new DeleteStudent());
         }
 
         private void btn_Search_P_Click(object sender, RoutedEventArgs e)
@@ -216,5 +211,6 @@ namespace SZ
                 pulsado = false;
             }
         }
+
     }
 }
